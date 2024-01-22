@@ -1,0 +1,72 @@
+.main{
+  text-align: center;
+  align-items: center;
+}
+
+.block{
+  display: inline-block;
+  background-color: #EEEEEE;
+  height: 70vh;
+  width:65vw;
+  margin-top: 10vh;
+  border-radius: 4vw;
+}
+
+.block .cover{
+  margin-top: 10rpx;
+  width: 100%;
+  background-color: #7C7575;
+  border-top-left-radius: 4vw;
+  border-top-right-radius: 4vw;
+  display: inline-block;
+  height:30vh;
+}
+
+.block .book{
+  font-size: larger;
+  color:#000000;
+}
+
+.block .view{
+  width: 100%;
+  margin-top: 2vw;
+}
+.block .view_1{
+  display: inline-block;
+  width: 80%;
+  margin-top: 4vw;
+}
+
+.block .profile_photo{
+  float: left;
+  background-color: #ffffff;
+  width: 150rpx;
+  height:150rpx;
+  border-radius: 10vw;
+}
+
+.header{
+  display: inline-flex;
+  font-size: larger;
+  width: 20vw;
+  height: 13vh;
+  align-items: center;
+  font-size: medium;
+  padding-left: 6vw;
+}
+
+ .content{
+  font-size: medium;
+  color: #7C7575;
+}
+
+.add{
+  font-size: 12vw;
+  background-color: #7C7575;
+  width: 18vw;
+  border-radius: 22vw;
+  height:18vw;
+  position: absolute;
+  left: 40vw;
+top:82vh;
+}
