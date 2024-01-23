@@ -1,0 +1,28 @@
+{
+  "permission": {
+    "scope.userLocation": {
+      "desc": "11"
+    }
+  },
+  "pages": [
+    "pages/course/course"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#8FBC8F",
+    "navigationBarTitleText": "课程界面",
+    "navigationBarTextStyle": "black"
+},
+  "style": "v2",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
