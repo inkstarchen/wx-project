@@ -5,7 +5,11 @@
     }
   },
   "pages": [
-    "pages/course/course"
+    "pages/course/course",
+    "pages/zhiliao/zhiliao",
+    "pages/linianjuan/linianjuan",
+    "pages/biji/biji",
+    "pages/duwutuijian/duwutuijian"
   ],
   "window": {
     "backgroundTextStyle": "light",

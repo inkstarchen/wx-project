@@ -1,5 +1,5 @@
 <!--components/userItem/userItem.wxml-->
 <!-- <text>components/userItem/userItem.wxml</text> -->
-<view class="user-item">
+<view bindtap="handleHot" class="user-item">
     <text class="user-text">{{item.title}}</text>
 </view>

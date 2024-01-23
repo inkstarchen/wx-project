@@ -1,13 +1,5 @@
 var json = [
-  {
-      "title": "播放列表"
-  },
-  {
-      "title": "已下载"
-  },
-  {
-      "title": "已收藏歌曲"
-  }
+
 ]
 
 var broad = [
