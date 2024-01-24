@@ -1,0 +1,72 @@
+page{
+  background-color: #EEEEEE;
+}
+.back_1{
+  width: 100vw;
+  height:26vh;
+  border-radius: 5vw;
+  background: linear-gradient(to right,#9DF3C4,#1FAB89);
+  z-index: 0;
+}
+
+.profile_photo{
+  position: absolute;
+  top:12vh;
+  left: 15vw;
+  background-color: azure;
+  height: 22vh;
+  width: 35vw;
+  border-radius: 5vw;
+  z-index: 1;
+}
+
+.profile_text{
+  position: absolute;
+  top: 15vh;
+  font-size: medium;
+  left: 55vw;
+  width: 40vw;
+}
+
+.login{
+  margin-top: 10vh;
+  font-size: 45rpx;
+}
+
+.container_1{
+  margin-top: 3vh;
+  text-align: center;
+  background: #EEEEEE;
+  height: 20vh;
+}
+
+.text_box{
+  display: inline-block;
+  border-bottom: #B8B0B0 solid 1rpx;
+  width: 35vh;
+}
+
+.reminder{
+  font-size: small;
+  color: #B8B0B0;
+}
+
+.container_2{
+  margin-top: 3vw;
+}
+
+.block_1{
+  background-color: aquamarine;
+  width: 270rpx;
+  margin: 3vw;
+  height: 270rpx;
+  border-radius: 3vw;
+  display: inline-flex;
+}
+
+.block_1 text{
+  font-size: 50rpx;
+  position: absolute;
+  padding-left: 65rpx;
+  padding-top: 85rpx;
+}

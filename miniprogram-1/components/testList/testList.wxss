@@ -1,0 +1,27 @@
+/* components/testList/testList.wxss */
+.test-item{
+  display: flex;
+  align-items: center;
+  transition: all 0.3;
+  background-color: rgb(231, 237, 241);
+  padding: 30rpx;
+  margin: 10rpx;
+}
+.test-img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 64rpx;
+  border-style:solid;
+  border-width: 2rpx;
+}
+.test-textContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50rpx;
+}
+.testTitle{
+  font-weight: bold;
+}
+.testText{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
