@@ -2,7 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/recommend/recommend",
-    "pages/logs/logs",
     "pages/course/course",
     "pages/resource/resource",
     "pages/exam/exam",
