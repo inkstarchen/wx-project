@@ -1,0 +1,10 @@
+<!--components/testList/testList.wxml-->
+<view class="test-item" bindtap="tapTest">
+  <view class="profile">
+    <image src="{{item.src}}" mode="aspectFit" class="test-img"/>
+  </view>
+  <view class="test-textContainer">
+    <text class="testTitle">{{item.title}}</text>
+    <text class="testText">{{item.text}}</text>
+  </view>
+</view>

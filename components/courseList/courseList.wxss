@@ -1,0 +1,31 @@
+/* components/courseList/courseList.wxss */
+.courseBox{
+  display: flex;
+  border-style: solid;
+  border-width: 3rpx;
+  border-radius: 64rpx;
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  margin-left:30rpx;
+  margin-right: 30rpx;
+  margin-top: 15rpx;
+}
+.coursePicBox{
+  display: flex;
+  border-style: solid;
+  border-width: 3rpx;
+  background-color: #ffffff;
+  border-radius: 50rpx;
+  margin-right: 30rpx;
+}
+.coursePic{
+  width: 80rpx;
+  height: 80rpx;
+}
+.course{
+  display: flex;
+  flex-direction: column;
+}
+.courseName{
+  font-weight: 600;
+}
