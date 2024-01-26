@@ -1,2 +1,5 @@
 <!--pages/biji/biji.wxml-->
-<text>pages/biji/biji.wxml</text>
+<text>\n</text>
+<text>\n</text>
+<button type="primary" bindtap="uploadFileTap" data-type="file">上传文件</button>
+<button type="primary" style="margin-top: 45rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>

@@ -37,7 +37,13 @@ Component({
         wx.navigateTo({
           url: '/pages/resource/resource',
         })
-      }var json = [
+      }
+      if(data.name == '笔记'){
+        wx.navigateTo({
+          url: '/pages/note/note',
+        })
+      }
+      var json = [
 
 ]
 
