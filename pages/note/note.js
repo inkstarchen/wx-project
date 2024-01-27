@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {},
-
+  
   /** 上传按钮点击监听 */
   async uploadFileTap(res) {
     // 上传类型
