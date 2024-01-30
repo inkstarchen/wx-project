@@ -34,6 +34,11 @@ Page({
     })
   },
 
+  open:function(e){
+    wx.openDocument({
+      filePath: this.data.recommend.FileId,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

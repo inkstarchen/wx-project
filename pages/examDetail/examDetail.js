@@ -18,7 +18,8 @@ Page({
       exam:db.collection("Exams").where({
         Name:this.data.examName
       })
-    })    
+    }),
+    console.log(this.data.exam)
   },
 
   download:function(e){
@@ -30,6 +31,12 @@ Page({
       fail:err=>{
 
       }
+    })
+  },
+
+  open:function(e){
+    wx.openDocument({
+      filePath: this.data.exam.FileId,
     })
   },
 

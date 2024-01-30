@@ -5,14 +5,38 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    noteName:null,
+    note:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    console.log(this.data.noteName);
+    this.setData({
+      exam:db.collection("Notes").where({
+        Name:this.data.noteName
+      })
+    })
+  },
 
+  download:function(e){
+    wx.cloud.downloadFile({
+      fileId:this.data.note.FileId,
+      success:res=>{
+        console.log(res.tempFilePath)
+      },
+      fail:err=>{
+
+      }
+    })
+  },
+
+  open:function(e){
+    wx.openDocument({
+      filePath: this.data.note.FileId,
+    })
   },
 
   /**

@@ -1,4 +1,11 @@
 <!--pages/examDetail/examDetail.wxml-->
-<view bindtap="download">
-  <image src="../../images/download.png" mode="aspectFill"/>
+<view class="downloadBag">
+  <view bindtap="download">
+    <image src="../../images/download.png" mode="aspectFill" class="download"/>
+  </view>
+</view>
+<view class="openBag">
+  <view bindtap="open">
+    <image src="../../images/open.png" mode="aspectFill" class="download"/>
+  </view>
 </view>
