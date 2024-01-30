@@ -1,14 +1,13 @@
-// components/courseList/courseList.js
+// components/userItem/userItem.js
 Component({
-
   /**
    * 组件的属性列表
    */
   properties: {
-    item:{
-      type:Object,
-      value:{}
-    }
+      item: {
+          type: Object,
+          value: {}
+      }
   },
 
   /**
@@ -22,9 +21,9 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    to_course: function(e) {
+    handleHot: function(e) {
       wx.navigateTo({
-        url: '/pages/course/course',
+        url: `../pages/zhiliao/zhiliao`,
       })
   }
   }

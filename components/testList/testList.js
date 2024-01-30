@@ -23,7 +23,10 @@ Component({
    */
   methods: {
     tapTest:function(e) {
-      console.log("tap test!")
+      console.log(this.data.item.title);
+      wx.navigateTo({
+        url: `../examDetail/examDetail?examName=${this.data.item.title}&`,
+      })
     }
   }
 })

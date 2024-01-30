@@ -1,31 +1,12 @@
-// pages/search/search.js
-const db=wx.cloud.database()
-const Courses=db.collection("Courses")
-import courseData from "../../datas/courseData"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchResult:null,
+
   },
-  search:function(e) {
-    let searchTerm=e.detail.value;
-    Courses.where(db.command.or([
-      {
-        Name:db.RegExp({
-          regexp:searchTerm,
-          options:"i",
-        })
-      }
-    ])).get().then(res=>{
-      console.log(res.data);
-      this.setData({
-        searchResult:res.data
-      })
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -80,5 +61,10 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  goto: function(event) {
+    wx.navigateTo({
+      url: '/pages/recommend//recommend.wxml'
+    });
   }
 })

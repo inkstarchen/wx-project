@@ -1,38 +1,38 @@
-// pages/search/search.js
+// pages/resourceDetail/resourceDetail.js
 const db=wx.cloud.database()
-const Courses=db.collection("Courses")
-import courseData from "../../datas/courseData"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchResult:null,
+    resource:null,
+    resourceName:""
   },
-  search:function(e) {
-    let searchTerm=e.detail.value;
-    Courses.where(db.command.or([
-      {
-        Name:db.RegExp({
-          regexp:searchTerm,
-          options:"i",
-        })
-      }
-    ])).get().then(res=>{
-      console.log(res.data);
-      this.setData({
-        searchResult:res.data
-      })
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    console.log(this.data.resourceName);
+    this.setData({
+      exam:db.collection("Resource").where({
+        Name:this.data.resourceName
+      })
+    })
   },
 
+  download:function(e){
+    wx.cloud.downloadFile({
+      fileId:this.data.resource.FileId,
+      success:res=>{
+        console.log(res.tempFilePath)
+      },
+      fail:err=>{
+
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -4,6 +4,6 @@
 </page-meta>
 <view class="searchBox">
   <view class="searchIcon"><image src="../../images/search.png" mode="aspectFill" class="searcher"/></view>
-  <input type="text" placeholder="请输入课程" placeholder-style="font-weight:lighter" class="searchIt" bindinput="getValue"/>
+  <input type="text" placeholder="请输入课程" placeholder-style="font-weight:lighter" class="searchIt" bindinput="search"/>
 </view>
-<view wx:for="{{courses}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><courseList item="{{item}}"/></view>
+<view wx:for="{{searchResult}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><courseList item="{{item}}"/></view>

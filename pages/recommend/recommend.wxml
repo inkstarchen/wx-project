@@ -1,0 +1,20 @@
+<view class="main">
+    <view class="block">
+        <image class="cover" src="../../images/数学分析.jpg" mode="aspectFit"></image>
+        <view class="view">
+          <text class="book">数学分析</text>
+        </view>
+        <view class="view_1">
+            <image class="profile_photo" src="../../images/个人头像.png"></image>
+         <view class="header">
+         <text>示例标题</text>
+         </view>
+        </view>
+        <view class="view_1">
+          <text class="content">我是示例文字，我有长度限制。</text>
+        </view>
+    </view>
+    <view class="add" bind:tap="uploadrecommend">+
+    </view>
+    
+</view>

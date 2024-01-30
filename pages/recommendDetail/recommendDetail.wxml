@@ -1,0 +1,3 @@
+<view bindtap="download">
+  <image src="../../images/download.png" mode="aspectFill"/>
+</view>

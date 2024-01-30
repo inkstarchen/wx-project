@@ -1,0 +1,27 @@
+<view>
+  <view class="back_1">
+      <image class="profile_photo" mode="aspectFill" src="../../images/个人头像.png"></image>
+      <text class="profile_text">这是我的个人简介</text>
+  </view>
+  <button class="login"> 登录 </button>
+  <view class="container_1">
+    <view class="text_box">
+      <text class="reminder">收藏的资料</text>
+    </view>
+    <view class="container_2" bind:tap="goto">
+      <view class="block_1">
+        <text>历年卷</text>
+      </view>
+      <view class="block_1">
+        <text>课程</text>
+      </view>
+      <view class="block_1">
+        <text>读物</text>
+      </view>
+      <view class="block_1">
+        <text>……</text>
+      </view>
+    </view>
+  </view>
+
+</view>

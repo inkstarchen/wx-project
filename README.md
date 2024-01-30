@@ -1,9 +1,1 @@
 # wx-project
-搜索页面pages/search/search
-搜索框内容由监听器发送到search.js的data中
-search页面引入了课程列表组件courseList
-点击课程列表对应了函数tapCourse
-
-历年卷页面pages/tests/tests
-引入了历年卷列表组件testList
-点击对应函数tapTest

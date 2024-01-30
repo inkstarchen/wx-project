@@ -1,0 +1,5 @@
+<!--pages/tests/tests.wxml-->
+<page-meta>
+  <navigation-bar title="历年卷" loading="true"></navigation-bar>
+</page-meta>
+<view wx:for="{{tests}}" wx:for-item="item" wx:for-index="index" wx:key="index"><testList item="{{item}}"/></view>
