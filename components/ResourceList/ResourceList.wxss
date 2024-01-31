@@ -8,11 +8,8 @@
   margin: 10rpx;
 }
 .test-img{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 64rpx;
-  border-style:solid;
-  border-width: 2rpx;
+  width: 80rpx;
+  height: 80rpx;
 }
 .test-textContainer{
   display: flex;
@@ -21,7 +18,21 @@
 }
 .testTitle{
   font-weight: bold;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 .testText{
   font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.download{
+  display: inline-flex;
+  margin-left: 30rpx;
+  border: rgb(114, 114, 114) solid 1rpx;
+  border-radius: 100%;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
 }

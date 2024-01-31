@@ -1,10 +1,13 @@
 <!--components/courseList/courseList.wxml-->
-<view class="courseBox" bind:tap="to_course">
-  <view class="coursePicBox">
-    <img src="{{item.src}}" mode="aspectFill" class="coursePic"/>
-  </view>
-  <view class="course">
-    <text class="courseName">{{item.name}}</text>
-    <text class="courseDetail">{{item.detail}}</text>
-  </view>
+<view class="courseBox" >
+  <view class="courseInfo" bind:tap="to_course">
+    <view class="coursePicBox">
+      <img src="{{item.src}}" mode="aspectFill" class="coursePic"/>
+    </view>
+    <view class="course">
+      <text class="courseName">{{item.Name}}</text>
+      <text class="courseDetail">{{item.Info}}</text>
+    </view>
+  </view >
+    <favor item="{{item}}"></favor>
 </view>

@@ -1,4 +1,4 @@
-// components/testList/testList.js
+// components/ReadingList.js
 Component({
 
   /**
@@ -8,7 +8,12 @@ Component({
     item:{
       type:Object,
       value:{}
+    },
+    index:{
+      type:String,
+      value:''
     }
+
   },
 
   /**
@@ -17,13 +22,17 @@ Component({
   data: {
 
   },
-
+  lifetimes:{
+    attached(){
+      this.setData({
+        Block:'block'+this.properties.index
+      })
+    }
+  },
   /**
    * 组件的方法列表
    */
   methods: {
-    tapTest:function(e) {
-      console.log("tap test!")
-    }
+
   }
 })

@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "ResourceList":"../../components/ResourceList/ResourceList"
+  }
 }

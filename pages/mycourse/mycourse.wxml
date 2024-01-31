@@ -1,0 +1,1 @@
+<view wx:for="{{courses}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><courseList item="{{item}}"/></view>

@@ -1,14 +1,13 @@
 <!--pages/user/user.wxml-->
 <!-- <text>pages/user/user.wxml</text> -->
 <view>
-<image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReywPc84O7M-yRYHN2nPlULvZgfUNc8PeoRA&usqp=CAU" mode=""/></view>
-<text>微积分课程是一门大学基础课程,是大部分学生的专业必修课。
-(相应课程简介)</text>
+<image src="{{Course.FileId}}" mode=""/></view>
+<text>{{Course.Info}}</text>
 <view style="padding-bottom: 20px"></view>
 <view class="page"> 
     <view class="latest">
         <view class="late-content" wx:for="{{broads}}" wx:for-item="item" wx:for-index="index" wx:key="index">
-        <lastestItem item="{{item}}"></lastestItem> 
+        <lastestItem item="{{item}}" CourseName="{{CourseName}}"></lastestItem> 
         </view>
     </view>
 </view>

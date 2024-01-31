@@ -1,0 +1,31 @@
+.item{
+  width: 100%;
+  height: 10vh;
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.user{
+  float:right;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-top: 3.5vh;
+  width: 200px;
+
+}
+
+
+
+.text_box{
+  margin: 3vh;
+  font-size: 40rpx;
+  display: inline-flex;
+}
+
+
+
+.finish{
+  margin-top:20rpx;
+}

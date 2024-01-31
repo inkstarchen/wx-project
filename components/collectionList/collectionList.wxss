@@ -1,0 +1,28 @@
+.collection_item{
+  display: inline-flex;
+  height: 120rpx;
+  text-align: start;
+  font-size: 35rpx;
+  font-weight: 700;
+  align-items: center;
+}
+.icon_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20%;
+  width: 90rpx;
+  height:90rpx;
+}
+.icon{
+  width: 50rpx;
+  height: 50rpx;
+
+}
+.text{
+  padding-left: 40rpx;
+  width:510rpx;
+}
+.arrow{
+  width: 60rpx;
+}
