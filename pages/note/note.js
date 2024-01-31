@@ -62,6 +62,21 @@ Page({
 
     console.log("最终返回云文件ID列表 =====>", cloudPathList)
 
+    return new Promise((resolve, reject) => {
+      let suffix = /\.\w+$/.exec(filePath)[0] //正则表达式返回文件的扩展名
+      let cloudPath = cloudPathPrefix + '/' + randomStr + suffix
+      wx.cloud.uploadFile({
+        cloudPath: cloudPath,
+        filePath: filePath,
+        success(res) {
+          resolve(res)
+        },
+        fail(err) {
+          resolve(false)
+          console.error("===== 上传文件失败 =====", err)
+        },
+      })
+    })
   },
 
   /**
