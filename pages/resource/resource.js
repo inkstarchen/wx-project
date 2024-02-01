@@ -8,7 +8,8 @@ Page({
   onLoad(options){
     this.setData({
       CourseName:options.CourseName
-    })
+    });
+    console.log(options.CourseName);
   },
   onShow(){
     const db = wx.cloud.database();

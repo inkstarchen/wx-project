@@ -39,7 +39,7 @@ Component({
       }
       if(data.name == '资料'){
         wx.navigateTo({
-          url: '/pages/resource/resource?CourseName'+this.properties.CourseName,
+          url: '/pages/resource/resource?CourseName='+this.properties.CourseName,
         })
       }
       if(data.name == '笔记'){
