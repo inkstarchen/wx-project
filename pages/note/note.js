@@ -28,6 +28,8 @@ Page({
       }
     })
 },
+
+
   /** 上传按钮点击监听 */
   async uploadFileTap(res) {
     // 上传类型
@@ -59,25 +61,42 @@ Page({
       console.log(filePathList[i], "文件上传成功=====>", cloudPathObj)
       cloudPathList.push(cloudPathObj.fileID)
     }
-
-    console.log("最终返回云文件ID列表 =====>", cloudPathList)
-
-    return new Promise((resolve, reject) => {
-      let suffix = /\.\w+$/.exec(filePath)[0] //正则表达式返回文件的扩展名
-      let cloudPath = cloudPathPrefix + '/' + randomStr + suffix
-      wx.cloud.uploadFile({
-        cloudPath: cloudPath,
-        filePath: filePath,
-        success(res) {
-          resolve(res)
-        },
-        fail(err) {
-          resolve(false)
-          console.error("===== 上传文件失败 =====", err)
-        },
-      })
-    })
   },
+  upLoadFile(filePath, cloudPathPrefix) {
+  // 取随机名
+  let str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let randomStr = '';
+  for (let i = 17; i > 0; --i) {
+    randomStr += str[Math.floor(Math.random() * str.length)];
+  }
+  randomStr += new Date().getTime()
+
+  return new Promise((resolve, reject) => {
+    let suffix = /\.\w+$/.exec(filePath)[0] //正则表达式返回文件的扩展名
+    let cloudPath = cloudPathPrefix + '/' + randomStr + suffix
+    const db = wx.cloud.database();
+    db.collection("Resource").add({
+      data:{
+        FileName:randomStr,
+        FileId:cloudPath,
+        Type:'Exam',
+        CourseName:this.data.CourseName
+      }
+    })
+    wx.cloud.uploadFile({
+      cloudPath: cloudPath,
+      filePath: filePath,
+      success(res) {
+        resolve(res)
+      },
+      fail(err) {
+        resolve(false)
+        console.error("===== 上传文件失败 =====", err)
+      },
+    });
+    
+  })
+},
 
   /**
    * 从聊天记录选择文件
