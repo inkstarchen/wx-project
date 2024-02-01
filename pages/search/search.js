@@ -103,4 +103,9 @@ Page({
   onShareAppMessage() {
 
   },
+  add(){
+    wx.navigateTo({
+      url: '/pages/addcourse/addcourse',
+    })
+      },
 })

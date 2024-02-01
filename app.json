@@ -12,6 +12,7 @@
     "pages/Settings/Settings",
     "pages/myexam/myexam",
     "pages/myresource/myresource",
+    "pages/addcourse/addcourse",
     "pages/mynote/mynote"
   ],
   "tabBar": {
