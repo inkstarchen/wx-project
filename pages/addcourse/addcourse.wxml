@@ -1,2 +1,22 @@
-<!--pages/addcourse/addcourse.wxml-->
-<text>pages/addcourse/addcourse.wxml</text>
+<form bindsubmit="bindSubmit">
+  <view class="form_border">
+    <label>课程名称:</label>
+    <input name="Name" auto-focus placeholder="  请填写课程名称" />
+  </view>
+  <view class="form_border">
+    <label>课程介绍:</label>
+    <input name="Info"  placeholder="  请填写课程介绍" />
+  </view>
+  
+<view>
+  <label>课程图片:</label>
+         <input style="display:none" name = "orderImage" value='{{showImage_url}}'></input>
+          <button bindtap="uploadimg">+</button>
+            
+            <image src='{{showImage_url}}'></image>        
+          </view>
+<text>\n</text>
+ <button hover-class="hover-button" class="button" form-type="submit">提交</button>
+  <button hover-class="hover-button" class="button" form-type="reset" style="margin-top: 10rpx;">重置</button>
+ 
+</form>
