@@ -1,0 +1,41 @@
+.main{
+  text-align: center;
+  align-items: center;
+  padding-top: 5vh;
+}
+.profile{
+  display: inline-block;
+  margin-bottom: 10vh;
+}
+.profile_photo{
+  left: 15vw;
+  background-color: rgb(255, 255, 255);
+  height: 250rpx;
+  width: 250rpx;
+  border-radius: 100%;
+  border: solid #B8B0B0 1rpx;
+}
+.edit{
+  position: absolute;
+  top:240rpx;
+  left: 420rpx;
+  background-color: #A1EAFB;
+  width: 70rpx;
+  height: 70rpx;
+  padding: 10rpx;
+  border-radius: 100%;
+}
+.profile_name{
+  white-space: pre-wrap;
+  font-size: 60rpx;
+  font-weight:700;
+}
+.collection_text{
+  display: inline-block;
+  border-bottom: #B8B0B0 solid 1rpx;
+  width: 25vh;
+  font-size: small;
+  color: #B8B0B0;
+  margin-bottom: 3vh;
+}
+

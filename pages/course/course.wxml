@@ -1,0 +1,28 @@
+<!--pages/user/user.wxml-->
+<!-- <text>pages/user/user.wxml</text> -->
+<view class="main" >
+  <view class="info_box">
+<view class="image_box">
+  <image src="{{Course.FileId}}" mode=""/>
+</view>
+<view class="name_box">
+  <text>{{Course.Name}}</text>
+</view>
+  </view>
+  <view class="detail">
+    <view class="info">
+      <text>{{Course.Info}}</text>
+    </view>
+    <view  wx:for="{{broads}}" class="late-content" wx:for-item="item" wx:for-index="index" wx:key="index">
+      <lastestItem item="{{item}}" CourseName="{{CourseName}}"></lastestItem> 
+    </view>
+  </view>
+</view>
+
+<!-- <view>
+</view>
+
+<view style="padding-bottom: 20px"></view>
+<view class="page"> 
+    
+</view> -->

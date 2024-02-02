@@ -1,0 +1,14 @@
+<!--components/courseList/courseList.wxml-->
+<view class="{{touch? 'touch':'courseBox'}}"  bind:touchstart="touchstart" bind:touchend="touchend">
+  <view class="courseInfo" bind:tap="to_course">
+    <view class="coursePicBox">
+      <image src="{{item.FileId}}" mode="aspectFill" class="coursePic"/>
+    </view>
+    <view class="course">
+      <text class="courseName">{{item.Name}}</text>
+      <text class="courseDetail">建议：{{item.Recommend}}</text>
+    </view>
+    <favor item="{{item}}"></favor>
+  </view >
+    
+</view>

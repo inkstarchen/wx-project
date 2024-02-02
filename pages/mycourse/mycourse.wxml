@@ -1,0 +1,4 @@
+<view wx:if="{{none}}" class="none">
+<view>空空如也，快去收藏吧！</view>
+</view>
+<view wx:for="{{courses}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><courseList item="{{item}}"/></view>

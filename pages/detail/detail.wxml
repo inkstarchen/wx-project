@@ -1,0 +1,21 @@
+<view>
+  <form bindsubmit="finish">
+    <view class="item">
+      <view class="text_box">
+        <text>头像</text>
+      </view>
+      <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+            <image class="avatar" src="{{User.AvatarUrl}}" mode="aspectFit"></image>
+      </button>
+    </view> 
+    <view class="item">
+      <view class="text_box">
+        <text>昵称</text>
+      </view>
+      <input type="nickname" class="nickname-input" name="Name" value="{{User.Name}}" bind:change="onInputChange" />
+    </view>
+    <view class="finish">
+      <button form-type="submit" >更改完成</button>
+    </view>
+  </form>
+</view>

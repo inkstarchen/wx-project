@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ResourceList":"../../components/ResourceList/ResourceList"
+  },
+  "navigationBarTitleText": "笔记"
+}

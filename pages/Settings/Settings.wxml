@@ -1,0 +1,26 @@
+<view>
+    <view class="item">
+      <view class="text_box">
+        <text>账号状态</text>
+      </view>
+    <view  class="account">
+      <text>{{notLogin?'未登录':'已登录'}}</text>
+    </view>
+    </view> 
+    <view class="item">
+      <view class="text_box">
+        <text>版本</text>
+      </view>
+      <view  class="account">
+      <text>测试版</text>
+    </view>
+    </view>
+    <view class="{{touch?'touch':'button'}}" bind:touchstart="touchstart" bind:touchend="touchend">
+    <view wx:if="{{notLogin}}">
+          <view class="login" bind:tap="login"> 登录 </view>
+    </view>
+    <view wx:else>
+          <view class="logout" bind:tap="logout"> 注销</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,12 @@
+<scroll-view id="my-scroll" scroll-x scroll-into-view="{{currentBlock}}" bindscroll="onScroll" bind:touchend="onmouseup" scroll-with-animation="true"
+bind:touchstart="onmousedown" >
+<view class="window" >
+<view wx:for="{{BookList}}" wx:for-item="item" wx:for-index="index" wx:key="index" id="{{'block'+index}}">
+  <ReadingList item="{{item}}" index="{{index}}"></ReadingList>
+</view>
+
+    
+
+</view>
+  <!-- 其他方块 -->
+</scroll-view>

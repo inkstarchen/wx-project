@@ -1,0 +1,23 @@
+<view class="main">
+  <view class="profile" >
+    <view class="photo_box">
+      <image class="profile_photo" mode="aspectFill" src="{{User.AvatarUrl}}"></image>
+      <image src="/images/edit.svg" class="edit" bind:tap="detail"></image>
+    </view>
+      <text class="profile_name">{{User.Name}}</text>
+  </view>
+  <view class="collection">
+    <view class="collection_text">
+      <text class="reminder">收藏的资料</text>
+    </view>
+    <view wx:for="{{broads}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+     <collectionList item="{{item}}"></collectionList>
+    </view>
+  </view>
+  
+</view>
+
+ 
+
+
+

@@ -1,0 +1,60 @@
+/* components/courseList/courseList.wxss */
+.courseBox{
+  transition: 0.2s;
+  overflow: hidden;
+  display: flex;
+  border-radius: 30rpx;
+  height: 260rpx;
+  width: 670rpx;
+  background-color: #ffffff;
+  margin-left:50rpx;
+  margin-top: 50rpx;
+}
+
+.courseInfo{
+  display: flex;
+}
+.coursePicBox{
+  display: flex;
+  margin-right: 30rpx;
+}
+.coursePic{
+  width: 250rpx;
+  height: auto;
+}
+.course{
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.touch{
+  transition: 0.2s;
+  background-color: rgb(230,230,230);
+  overflow: hidden;
+  display: flex;
+  border-radius: 30rpx;
+  height: 260rpx;
+  width: 670rpx;
+  margin-left:50rpx;
+  margin-top: 50rpx;
+}
+.courseName{
+  width: 400rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-top: 50rpx;
+  font-size: 42rpx;
+  font-weight: 600;
+}
+
+.courseDetail{
+  color: #b1afaf;
+  font-weight: 700;
+  font-size: 35rpx;
+  margin-top:20rpx;
+  width: 350rpx;
+  height: 75rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

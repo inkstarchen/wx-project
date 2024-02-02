@@ -1,0 +1,19 @@
+<!--pages/zhiliao/zhiliao.wxml-->
+<page-meta>
+  <navigation-bar title="资料" ></navigation-bar>
+</page-meta>
+<view class="chaptertop">课件</view>
+<view class="chapter">第一章</view>
+<view class="chapter">第二章</view>
+<view class="chapter">第三章</view>
+<view class="chapter">第四章</view>
+
+<view class="homeworktop">课后作业答案</view>
+<view class="homework">第一章</view>
+<view class="homework">第二章</view>
+<view class="homework">第三章</view>
+<view class="homework">第四章</view>
+
+<view wx:for="{{resources}}" wx:for-item="item" wx:for-index="index" wx:key="index"><ResourceList item="{{item}}"></ResourceList></view>
+<button type="primary" bindtap="uploadFileTap" data-type="file">上传文件</button>
+<button type="primary" style="margin-top: 45rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>

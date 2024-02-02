@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "courseList":"../../components/courseList/courseList"
+  },
+  "navigationBarTitleText": "课程"
+}

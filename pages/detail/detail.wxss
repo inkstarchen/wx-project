@@ -1,0 +1,38 @@
+.item{
+  width: 100%;
+  height: 10vh;
+  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
+}
+
+.avatar-wrapper {
+  float:right;
+  padding: 0;
+  height:56px;
+  width: 56px !important;
+  border-radius: 8px;
+  margin-top: 1vh;
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+}
+
+.nickname-input{
+  float:right;
+  font-size: 20px;
+  margin-right: 20px;
+  margin-top: 3.5vh;
+  width: 100px;
+}
+
+.text_box{
+  margin: 3vh;
+  font-size: 40rpx;
+  display: inline-flex;
+}
+
+.finish{
+  margin-top:20rpx;
+}
+

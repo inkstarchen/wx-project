@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "ReadingList":"../../components/ReadingList/ReadingList"
+  },
+  "navigationBarTitleText": "读物推荐"
+}

@@ -1,0 +1,8 @@
+<!--components/latestItem/latestItem.wxml-->
+<!-- <text>components/latestItem/latestItem.wxml</text> -->
+<view class="broad-item">
+  <image bind:tap="handleHot" src="{{item.thumb}}"></image>
+  <view class="broad-text">
+    <text>{{item.name}}</text>
+  </view>
+</view>
