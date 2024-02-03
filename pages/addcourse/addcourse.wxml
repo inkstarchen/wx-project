@@ -16,9 +16,9 @@
 <view>
   <label>课程图片:</label>
          <input style="display:none" name = "orderImage" value='{{showImage_url}}'></input>
-          <button bindtap="uploadimg">+</button>
+          <button bindtap="upload">+</button>
             
-            <image src='{{showImage_url}}'></image>        
+            <image src='{{images}}'></image>        
           </view>
         </form>  
 
