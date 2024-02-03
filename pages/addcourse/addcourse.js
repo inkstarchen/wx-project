@@ -6,9 +6,9 @@ Page({
    */
   data: {
     orderImage:"",
-    orderText:"",
     showImage_url: '',
     "Name":"",
+    "Recommend":"",
     "Info":""
   },
 
@@ -17,8 +17,9 @@ Page({
       orderImage: e.detail.value.orderImage
     })
     const wxreq = wx.request({
-      url: 'cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/课程',//后台接口路径
+      url: 'cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207',//后台接口路径
       data: {
+      
         'orderImage': this.data.showImage_url
       },
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
@@ -51,11 +52,12 @@ Page({
     
     var Name = res.detail.value.Name
     var Info = res.detail.value.Info
-   
+    var Recommend = res.detail.value.Recommend
 
     db.collection("Courses").add({
       data: {
         "Name":Name,
+        "Recommend":Recommend,
         "Info":Info
       },
       success: function(res){
@@ -94,7 +96,7 @@ Page({
         })
         //图片上传
         wx.uploadFile({
-          url: 'cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/课程',//调用后台接口的路径
+          url: 'cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207',//调用后台接口的路径
           method:'POST',
           filePath: that.data.showImage_url,
           name: '课程',//此处注意要与后台保持一致

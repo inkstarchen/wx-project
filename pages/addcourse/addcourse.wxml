@@ -7,7 +7,10 @@
     <label>课程介绍:</label>
     <input name="Info"  placeholder="  请填写课程介绍" />
   </view>
-
+  <view class="form_border">
+    <label>课程建议:</label>
+    <input name="Recommend"  placeholder="  请填写课程建议" />
+  </view>
 
 <form bindsubmit="formsubmit">
 <view>
