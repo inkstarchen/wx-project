@@ -14,13 +14,11 @@ Page({
 
   formsubmit: function(e) {
     this.setData({
-      orderImage: e.detail.value.orderImage,
-      orderText: e.detail.value.orderText
+      orderImage: e.detail.value.orderImage
     })
     const wxreq = wx.request({
       url: 'cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/课程',//后台接口路径
       data: {
-        'orderText': this.data.orderText,
         'orderImage': this.data.showImage_url
       },
       method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  

@@ -7,7 +7,9 @@
     <label>课程介绍:</label>
     <input name="Info"  placeholder="  请填写课程介绍" />
   </view>
-  
+
+
+<form bindsubmit="formsubmit">
 <view>
   <label>课程图片:</label>
          <input style="display:none" name = "orderImage" value='{{showImage_url}}'></input>
@@ -15,6 +17,9 @@
             
             <image src='{{showImage_url}}'></image>        
           </view>
+        </form>  
+
+
 <text>\n</text>
  <button hover-class="hover-button" class="button" form-type="submit">提交</button>
   <button hover-class="hover-button" class="button" form-type="reset" style="margin-top: 10rpx;">重置</button>
