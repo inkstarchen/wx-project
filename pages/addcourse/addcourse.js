@@ -25,7 +25,7 @@ Page({
     var Name = res.detail.value.Name
     var Info = res.detail.value.Info
     var Recommend = res.detail.value.Recommend
-    var FileId = res.detail.value.FileID
+    var FileId = this.data.images
     db.collection("Courses").add({
       data: {
         "Name":Name,
