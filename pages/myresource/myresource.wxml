@@ -1,0 +1,1 @@
+<view wx:for="{{Resources}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><ResourceList item="{{item}}"></ResourceList></view>

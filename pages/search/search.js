@@ -1,36 +1,58 @@
-// pages/search/search.js
-const db=wx.cloud.database()
-const Courses=db.collection("Courses")
-import courseData from "../../datas/courseData"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchResult:null,
+    searchTerm:"",
+    courses:[]
   },
-  search:function(e) {
-    let searchTerm=e.detail.value;
-    Courses.where(db.command.or([
-      {
-        Name:db.RegExp({
-          regexp:searchTerm,
-          options:"i",
-        })
-      }
-    ])).get().then(res=>{
-      console.log(res.data);
-      this.setData({
-        searchResult:res.data
-      })
+  getValue: function (e) {
+    this.setData({
+      searchTerm: e.detail.value
     })
+    let searchItem = e.detail.value
+    const db = wx.cloud.database()
+    const collection = db.collection("Courses")
+    collection.where({
+      Name: db.RegExp({
+        regexp: searchItem,
+        options: 'i'  // 表示不区分大小写
+      })
+    }).get({
+      success: res => {
+        console.log(res.data)
+        const OpenId = wx.getStorageSync('OpenId');
+        const User = db.collection('User');
+        console.log('123');
+        this.setData({
+          courses: res.data
+        });
+        if(OpenId != ''){
+          User.where({
+            _openid: OpenId
+          }).get({
+            success: res2 => {
+              const Courses = res.data.map(course => ({
+                ...course,
+                favor: res2.data[0].Courses.indexOf(course.Name) !== -1
+              }));
+              this.setData({
+                courses: Courses
+              });
+            }
+          });
+        }
+      },
+      fail: err => {
+        console.error("查询失败", err)
+      }
+    });
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
   },
 
   /**
@@ -80,5 +102,10 @@ Page({
    */
   onShareAppMessage() {
 
-  }
+  },
+  add(){
+    wx.navigateTo({
+      url: '/pages/addcourse/addcourse',
+    })
+      },
 })

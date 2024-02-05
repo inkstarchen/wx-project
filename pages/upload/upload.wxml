@@ -1,0 +1,12 @@
+<!--pages/upload/upload.wxml-->
+<page-meta>
+  <navigation-bar title="{{title}}"></navigation-bar>
+</page-meta>
+<form bindsubmit="submitForm" bindreset="resetForm">
+  <input type="text" name="Category" placeholder="请输入文件分类" placeholder-style="font-weight:lighter"/>
+  <button form-type="submit">确认</button>
+  <button form-type="reset">重置</button>
+</form>
+<button type="primary" bindtap="uploadFileTap" data-type="file">上传文件</button>
+<button type="primary" style="margin-top: 45rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>
+<button type="warn" style="margin-top: 45rpx;" bindtap="removeFile">删除文件</button>

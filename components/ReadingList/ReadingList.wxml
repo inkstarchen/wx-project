@@ -1,0 +1,7 @@
+<!--components/ReadingList.wxml-->
+<view id="{{Block}}" >
+    <view class="content-item">
+    <image class="image" src="{{item.PicPath}}" mode="aspectFit">
+    </image>
+    </view>
+</view>

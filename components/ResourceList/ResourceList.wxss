@@ -1,0 +1,38 @@
+/* components/testList/testList.wxss */
+.test-item{
+  display: flex;
+  align-items: center;
+  transition: all 0.3;
+  background-color: rgb(231, 237, 241);
+  padding: 30rpx;
+  margin: 10rpx;
+}
+.test-img{
+  width: 80rpx;
+  height: 80rpx;
+}
+.test-textContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 50rpx;
+}
+.testTitle{
+  font-weight: bold;
+  width: 450rpx;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.testText{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.download{
+  display: inline-flex;
+  margin-left: 30rpx;
+  border: rgb(114, 114, 114) solid 1rpx;
+  border-radius: 100%;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
+}

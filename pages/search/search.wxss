@@ -23,3 +23,30 @@
 .searchIt{
 margin-top: 30rpx;
 }
+
+
+.button {
+  margin-top: 50px;
+  width:10px;
+  height: 50px;
+  border-radius: 500px;
+  background-color: #4A4A4A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  outline: none;
+}
+
+
+
+.button:hover {
+  background-color: #808080;
+}
+
+.plus {
+  font-size: 36px;
+  color: white;
+}

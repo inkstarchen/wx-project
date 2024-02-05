@@ -1,47 +1,44 @@
 import userList from "../../datas/userList.js";
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
 Page ({
   data: {
+    OpenId:"",
+    Course:[],
+    CourseName:"",
     users: [],
     broads: [],
-
-    userInfo: {
-      avatarUrl: defaultAvatarUrl,
-      nickName: '',
-    },
-    hasUserInfo: false,
-    canIUseGetUserProfile: wx.canIUse('getUserProfile'),
-    canIUseNicknameComp: wx.canIUse('input.type.nickname'),
-
   },
 
 onLoad: function(options) {
     this.setData({
+      CourseName: options.CourseName,
       users: userList.users,
-      broads: userList.latest
+      broads: userList.latest,
     });
-    console.log(userList);
-    console.log(userList.latest);
-  },
-
-  userInfo: {
-    avatarUrl: defaultAvatarUrl,
-    nickName: '',
-  },
-  hasUserInfo: false,
-  canIUseGetUserProfile: wx.canIUse('getUserProfile'),
-  canIUseNicknameComp: wx.canIUse('input.type.nickname'),
-  bindViewTap() {
-    wx.navigateTo({
-      url: '../logs/logs'
+    const db = wx.cloud.database();
+    const collection = db.collection("Courses");
+    collection.where({
+      Name:options.CourseName
+    }).get({
+      success: res => {
+        this.setData({
+          Course:res.data[0]
+        })
+        console.log(this.data.Course);
+        wx.cloud.downloadFile({
+          fileID: this.data.Course.FileId,
+          success: result => {
+            this.setData({
+              'Course.FileId':result.tempFilePath
+            })
+          },
+          fail: res => {},
+        })
+      },
+      fail:err => {
+        console.error("查询失败",err);
+      }
     })
   },
-  onChooseAvatar(e) {
-    const { avatarUrl } = e.detail
-    const { nickName } = this.data.userInfo
-    this.setData({
-      "userInfo.avatarUrl": avatarUrl,
-      hasUserInfo: nickName && avatarUrl && avatarUrl !== defaultAvatarUrl,
-    })
-  },
+  onShow:function(){
+  }
 })

@@ -4,6 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
+      CourseName:{
+        type:String,
+        value:""
+      },
       item: {
           type: Object,
           value: {}
@@ -25,24 +29,27 @@ Component({
       const data = this.properties.item;
       if(data.name == '读物推荐'){
         wx.navigateTo({
-          url: '/pages/recommend/recommend',
+          url: '/pages/recommend/recommend?CourseName='+this.properties.CourseName,
         })
       }
       if(data.name == '历年卷'){
         wx.navigateTo({
-          url: '/pages/exam/exam',
+          url: '/pages/exam/exam?CourseName='+this.properties.CourseName,
         })
       }
       if(data.name == '资料'){
         wx.navigateTo({
-          url: '/pages/resource/resource',
+          url: '/pages/resource/resource?CourseName='+this.properties.CourseName,
         })
       }
       if(data.name == '笔记'){
         wx.navigateTo({
-          url: '/pages/note/note',
+          url: '/pages/note/note?CourseName='+this.properties.CourseName,
         })
-      }json=[]
+      }
+      var json = [
+
+]
 
 var broad = [
   {

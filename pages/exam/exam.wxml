@@ -1,5 +1,10 @@
 <!--pages/tests/tests.wxml-->
 <page-meta>
-  <navigation-bar title="历年卷" loading="true"></navigation-bar>
+  <navigation-bar title="历年卷"></navigation-bar>
 </page-meta>
-<view wx:for="{{tests}}" wx:for-item="item" wx:for-index="index" wx:key="index"><testList item="{{item}}"/></view>
+<view wx:for="{{tests}}" wx:for-item="item" wx:for-index="index" wx:key="index"><ResourceList item="{{item}}"/></view>
+<view class="toUpload" bindtap="toUpload">
+  <text>+</text>
+</view>
+<button type="primary" bindtap="uploadFileTap" data-type="file">上传文件</button>
+<button type="primary" style="margin-top: 45rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>

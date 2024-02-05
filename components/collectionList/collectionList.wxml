@@ -1,0 +1,7 @@
+<view class="collection_item" bind:tap="handlecollection">
+  <view class="icon_box">
+    <image src="{{item.thumb}}" mode="aspectFill" class="icon"></image>
+  </view>
+  <text class="text">{{item.name}}</text>
+  <image src="../../images/右箭头.svg" class="arrow"></image>
+</view>

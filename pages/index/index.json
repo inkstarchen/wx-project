@@ -1,6 +1,6 @@
 {
   "usingComponents":{
-
+    "collectionList":"../../components/collectionList/collectionList"
   },
   "navigationBarTitleText": "个人中心"
 }

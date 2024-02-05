@@ -3,7 +3,11 @@
   <navigation-bar title="查询"></navigation-bar>
 </page-meta>
 <view class="searchBox">
-  <view class="searchIcon"><image src="../../images/search.png" mode="aspectFill" class="searcher"/></view>
-  <input type="text" placeholder="请输入课程" placeholder-style="font-weight:lighter" class="searchIt" bindinput="search"/>
+  <view class="searchIcon" ><image src="../../images/search.png" mode="aspectFill" class="searcher"/></view>
+  <input type="text" placeholder="请输入课程" placeholder-style="font-weight:lighter" class="searchIt" bindinput="getValue"/>
 </view>
-<view wx:for="{{searchResult}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><courseList item="{{item}}"/></view>
+<view wx:for="{{courses}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><courseList item="{{item}}"/></view>
+
+<button class="button" bindtap="add">
+  <text class="plus" bindtap="add">+</text>
+</button>

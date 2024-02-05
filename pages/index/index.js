@@ -1,9 +1,18 @@
+import userList from "../../datas/userList1.js";
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    notLogin:true,
+    broads: [],
+    User:{
+      AvatarUrl:'../../images/个人头像.png',
+      Name:'游客',
+      OpenId:"",
+    },
 
   },
 
@@ -11,7 +20,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.setData({
+      broads: userList.latest,
+    });
   },
 
   /**
@@ -24,8 +35,35 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow() {
-
+  onShow(options) {
+    const OpenId = wx.getStorageSync('OpenId');
+    if(OpenId != ""){
+      const db = wx.cloud.database();
+      const User = db.collection('User');
+      User.where({
+        _openid: OpenId,
+      }).get({
+        success: res => {
+          this.setData({
+            User: res.data[0],
+            notLogin:false,
+          });
+        },
+        fail : err => {
+        }
+      })
+    }else{
+      this.setData({
+        OpenId:"",
+        notLogin:true,
+        User:{
+          AvatarUrl:'../../images/个人头像.png',
+          Name:'用户',
+          Info:"个人简介"
+        },
+      })
+    }
+  
   },
 
   /**
@@ -62,9 +100,20 @@ Page({
   onShareAppMessage() {
 
   },
-  goto: function(event) {
-    wx.navigateTo({
-      url: '/pages/recommend//recommend.wxml'
-    });
-  }
+
+  detail:function(){
+    if(this.data.notLogin){
+      wx.showModal({
+        title:"警告",
+        content:"你还未登录"
+      })
+    }else{
+      console.log(this.data);
+      wx.navigateTo({
+        url:'/pages/detail/detail?UserName='+this.data.User.Name
+      });
+    }
+  },
+
+
 })
