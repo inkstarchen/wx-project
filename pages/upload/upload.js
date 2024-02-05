@@ -20,7 +20,7 @@ Page({
   },
   removeFile:function(e){
     wx.navigateTo({
-      url: "/pages/removeFile/removeFile?CourseName=CourseName&FileType=FileType",
+      url: `/pages/removeFile/removeFile?CourseName=${this.data.CourseName}&FileType=${this.data.FileType}`,
     })
   },
   async uploadFileTap(res) {

@@ -1,18 +1,55 @@
 // pages/removeFile/removeFile.js
+const db=wx.cloud.database()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-
+    items:[],
+    options:[]
   },
-
+  change:function(e){
+    this.setData({
+      options:e.detail.value
+    })
+  },
+  submitForm:function(e){
+    for(var i=0;i<length(this.data.options);i++){
+      db.collection("Resource").doc(items[i]._id).remove({
+        success:function(res){
+          console.log(res.data)
+        }
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-
+    this.setData({
+      CourseName:options.CourseName,
+      FileType:options.FileType
+    }),
+    console.log(this.data.CourseName)
+    console.log(this.data.FileType)
+    db.collection("Resource").where(
+      {
+        CourseName:this.data.CourseName
+      },
+      {
+        FileType:this.data.FileType
+      }
+    ).get({
+      success:res=>{
+        this.setData({
+          items:res.data
+        })
+        console.log(this.data.items)
+      },
+      fail: err => {
+        console.error("获取数据失败", err)
+      }
+    })
   },
 
   /**

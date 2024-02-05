@@ -6,5 +6,3 @@
 <view class="toUpload" bindtap="toUpload">
   <text>+</text>
 </view>
-<button type="primary" bindtap="uploadFileTap" data-type="file">上传文件</button>
-<button type="primary" style="margin-top: 45rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>

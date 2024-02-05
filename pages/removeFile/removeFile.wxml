@@ -1,2 +1,9 @@
 <!--pages/removeFile/removeFile.wxml-->
-<text>pages/removeFile/removeFile.wxml</text>
+<form bindsubmit="submitForm">
+  <view>
+    <block wx:for="{{items}}" wx:for-item="item">
+      <input type="checkbox" value="{{item}}" bindChange="change"/>
+    </block>
+    <button form-type="submit" type="warn">删除选中项</button>
+  </view>
+</form>
