@@ -1,8 +1,5 @@
 {
   "usingComponents": {
-    "ResourceList":"../../components/ResourceList/ResourceList",
-    "navigationBack":"../../components/navigationBack/navigationBack",
-    "toUpload":"../../components/toUpload/toUpload",
-    "showModel":"../../components/showModel/showModel"
+    "ResourceList":"../../components/ResourceList/ResourceList"
   }
 }

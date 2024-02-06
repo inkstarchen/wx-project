@@ -1,15 +1,12 @@
+<scroll-view id="my-scroll" scroll-x scroll-into-view="{{currentBlock}}" bindscroll="onScroll" bind:touchend="onmouseup" scroll-with-animation="true"
+bind:touchstart="onmousedown" >
+<view class="window" >
+<view wx:for="{{BookList}}" wx:for-item="item" wx:for-index="index" wx:key="index" id="{{'block'+index}}">
+  <ReadingList item="{{item}}" index="{{index}}"></ReadingList>
+</view>
 
-<navigationBack></navigationBack>
-<scroll-view scroll-x  scroll-with-animation="true" scroll-into-view="{{BlockId}}" class="scroll" bind:touchend="end">
-<view class="window">
-<view  wx:for="{{BookList}}" wx:for-item="item" wx:key="index"  >
-<ReadingList item="{{item}}" index="{{index}}" current="{{BlockId}}" viewmore="{{viewmore}}"id="{{'block'+index}}"/>
+    
+
 </view>
-</view>
+  <!-- 其他方块 -->
 </scroll-view>
-<view class="cover"></view>
-<view bindtap="prevPage" class="prev">{{'<'}}</view>
-<view bindtap="nextPage" class="next">{{">"}}</view>
-<view class="button" bindtap="add">
-  <view class='content'>+</view>
-</view>

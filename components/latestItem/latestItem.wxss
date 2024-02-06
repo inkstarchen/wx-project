@@ -1,15 +1,24 @@
 /* components/latestItem/latestItem.wxss */
-image{
-  width:280rpx;
-  height:280rpx;
-  border-radius: 25rpx;
+.broad-item {
+  width:320rpx;
+  height:320rpx;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background-size: 100% 100%;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  z-index:1;
+  border-radius: 5px;
+  margin-top: 30px;
 }
 
 .broad-text {
-  color:rgb(0, 0, 0);
-  margin-left: 90rpx;
+  color:white;
+  display:flex;
+  align-items: center;
   z-index: 1;
-  font-weight: 700;
   font-size: 38rpx;
 }
-

@@ -1,7 +1,5 @@
 {
   "usingComponents": {
-    "ResourceList":"../../components/ResourceList/ResourceList",
-    "navigationBack":"../../components/navigationBack/navigationBack"
-  },
-  "navigationBarTitleText": "历年卷"
+    "ResourceList":"../../components/ResourceList/ResourceList"
+  }
 }

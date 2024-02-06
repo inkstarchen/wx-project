@@ -1,7 +1,5 @@
 {
   "usingComponents": {
-    "courseList":"../../components/courseList/courseList",
-    "navigationBack":"../../components/navigationBack/navigationBack"
-  },
-  "navigationBarTitleText": "课程"
+    "courseList":"../../components/courseList/courseList"
+  }
 }

@@ -1,17 +1,13 @@
 <!--pages/search/search.wxml-->
-<view class="searchback">
-<view class="block1"></view>
-<view class="block2"></view>
-<view class="block3"></view>
+<page-meta>
+  <navigation-bar title="查询"></navigation-bar>
+</page-meta>
 <view class="searchBox">
   <view class="searchIcon" ><image src="../../images/search.png" mode="aspectFill" class="searcher"/></view>
   <input type="text" placeholder="请输入课程" placeholder-style="font-weight:lighter" class="searchIt" bindinput="getValue"/>
 </view>
-</view>
-<view class="main">
 <view wx:for="{{courses}}" wx:for-item="item"  wx:for_index="index" wx:key="index"><courseList item="{{item}}"/></view>
-</view>
 
-<view class="button" bindtap="add">
-  <view class='content'>+</view>
-</view>
+<button class="button" bindtap="add">
+  <text class="plus" bindtap="add">+</text>
+</button>

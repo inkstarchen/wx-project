@@ -6,8 +6,7 @@
   <view class="test-textContainer" bindtap="OpenFile">
     <text class="testTitle">{{item.FileName}}</text>
   </view>
-  <view wx:if="{{OpenId != '0'}}" style="display: flex; transform: translateX(-100rpx);">
-    <image src="../../images/星星.svg" class="{{item.favor?'star':'star_no'}}"></image>
-    <image src="../../images/更多.svg" class="{{item.favor?'more':'more_no'}}" bind:tap="more"></image>
+  <view>
+    <favor item="{{item}}"></favor>
   </view>
 </view>

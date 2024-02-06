@@ -1,28 +1,13 @@
 <!--pages/user/user.wxml-->
 <!-- <text>pages/user/user.wxml</text> -->
-<navigationBack></navigationBack>
-<view class="favor"><favor item="{{item}}"></favor></view>
-<view class="main" >
-  <view class="info_box">
-  <image src="{{Course.FileId}}"class="info_box"  mode="aspectFill"/>
-  </view>
-  <view class="detail">
-    <view class="name_box">
-  <text>{{Course.Name}}</text>
-        </view>
-    <view class="info">
-      <text>{{Course.Info}}</text>
-    </view>
-    <view  wx:for="{{broads}}" class="late-content" wx:for-item="item" wx:for-index="index" wx:key="index">
-      <lastestItem item="{{item}}" CourseName="{{CourseName}}"></lastestItem> 
-    </view>
-  </view>
-</view>
-
-<!-- <view>
-</view>
-
+<view>
+<image src="{{Course.FileId}}" mode=""/></view>
+<text>{{Course.Info}}</text>
 <view style="padding-bottom: 20px"></view>
 <view class="page"> 
-    
-</view> -->
+    <view class="latest">
+        <view class="late-content" wx:for="{{broads}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+        <lastestItem item="{{item}}" CourseName="{{CourseName}}"></lastestItem> 
+        </view>
+    </view>
+</view>

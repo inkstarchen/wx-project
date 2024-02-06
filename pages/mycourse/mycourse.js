@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    none:true,
+    searchTerm:"",
     courses:[]
   },
   
@@ -40,12 +40,9 @@ Page({
           }
         }
         console.log(courses);
-        if(courses.length != 0){
-          this.setData({
-            courses: courses,
-            none:false,
-          });
-        }
+        this.setData({
+          courses: courses,
+        }) 
       },
       fail: err =>{
         console.error("获取失败",err);

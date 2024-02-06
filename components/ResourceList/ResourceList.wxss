@@ -1,15 +1,11 @@
 /* components/testList/testList.wxss */
-
 .test-item{
   display: flex;
   align-items: center;
   transition: all 0.3;
-  width: 84vw;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(231, 237, 241);
   padding: 30rpx;
-  margin-left: 30rpx;
-  margin-bottom: 10rpx;
-  box-shadow: 5rpx 5rpx 10rpx #929292;
+  margin: 10rpx;
 }
 .test-img{
   width: 80rpx;
@@ -31,27 +27,12 @@
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.more{
-  width: 40rpx;
-  padding: 20rpx;
-  height:40rpx;
+.download{
+  display: inline-flex;
+  margin-left: 30rpx;
+  border: rgb(114, 114, 114) solid 1rpx;
+  border-radius: 100%;
+  padding: 10rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
-
-.more_no{
-  transform: translateX(80rpx);
-  width: 40rpx;
-  padding: 20rpx;
-  height: 40rpx;
-
-}
-
-.star{
-  width: 80rpx;
-  height: 80rpx;
-}
-.star_no{
-  display: none;
-  width: 80rpx;
-  height:80rpx;
-}
-

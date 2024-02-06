@@ -65,9 +65,6 @@ Page({
           success: res => {
             const fileID = res.fileID;
             console.log(fileID);
-            wx.showToast({
-              title: '信息更改成功',
-            })
           },
           fail: console.error
         })

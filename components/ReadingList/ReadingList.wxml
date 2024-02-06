@@ -1,17 +1,7 @@
 <!--components/ReadingList.wxml-->
-<view class="{{viewmore?'favor_view':'favor'}}"><favor item="{{item}}"></favor></view>
 <view id="{{Block}}" >
-    <view class="{{viewmore?'content-item_view':'content-item'}}">
-    <view class="{{viewmore?'image_box_view':'image_box'}}">
-    <image  src="{{item.PicPath}}" class="{{viewmore?'image_view':'image'}}" mode="aspectFill">
+    <view class="content-item">
+    <image class="image" src="{{item.PicPath}}" mode="aspectFit">
     </image>
-  </view>
-  <view class="{{viewmore?'BookName_view':'BookName'}}" >{{item.BookName}}</view>
-  <scroll-view class="{{viewmore?'lines_view show':'lines'}}" scroll-y  >
-  <view   wx:for="{{lines}}" wx:for-item="item" wx:key="index">
-    <text>{{item}}</text>
-  </view>
-</scroll-view>
-  <view class="{{viewmore?'Close':'ViewMore'}}" bind:tap="viewmore">{{viewmore?'Close':'ViewMore'}}</view>
     </view>
 </view>

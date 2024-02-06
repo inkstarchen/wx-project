@@ -12,11 +12,8 @@
     "pages/Settings/Settings",
     "pages/myexam/myexam",
     "pages/myresource/myresource",
-    "pages/mynote/mynote",
     "pages/addcourse/addcourse",
-    "pages/addReading/addReading",
-    "pages/myReading/myReading",
-    "pages/upload/upload"
+    "pages/mynote/mynote"
   ],
   "tabBar": {
     "custom": false,
@@ -33,13 +30,15 @@
       {
         "selectedIconPath": "images/课程.png",
         "pagePath": "pages/search/search",
-        "text": "发现",
+        "text": "课程",
         "iconPath": "images/课程.png"
       }
     ]
   },
   "window": {
-    "navigationStyle": "custom"
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarBackgroundColor": "#ffffff"
   },
   "style": "v2",
   "componentFramework": "glass-easel",

@@ -9,8 +9,6 @@
     "include": []
   },
   "setting": {
-    "ignoreDevUnusedFiles": false,
-    "ignoreUploadUnusedFiles": false,
     "urlCheck": true,
     "es6": true,
     "enhance": true,

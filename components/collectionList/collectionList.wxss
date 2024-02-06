@@ -1,15 +1,4 @@
 .collection_item{
-  transition: 0.2s;
-  display: inline-flex;
-  height: 120rpx;
-  text-align: start;
-  font-size: 35rpx;
-  font-weight: 700;
-  align-items: center;
-}
-.touch{
-  transition: 0.2s;
-  background-color: rgb(230,230,230);
   display: inline-flex;
   height: 120rpx;
   text-align: start;
