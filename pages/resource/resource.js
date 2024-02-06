@@ -7,7 +7,7 @@ Page({
   data: {},
   toUpload:function(e){
     wx.navigateTo({
-      url: '/pages/upload/upload?FileType="Resource"',
+      url: '/pages/upload/upload?FileType=Resource',
     })
   },
   onLoad(options){

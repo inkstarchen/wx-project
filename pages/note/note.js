@@ -7,7 +7,7 @@ Page({
   data: {},
   toUpload:function(e){
     wx.navigateTo({
-      url: '/pages/upload/upload?FileType="Note"',
+      url: '/pages/upload/upload?FileType=Note',
     })
   },
   onLoad(options) {

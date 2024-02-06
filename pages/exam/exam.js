@@ -10,7 +10,7 @@ Page({
   },
   toUpload:function(e){
     wx.navigateTo({
-      url: '/pages/upload/upload?FileType="Exam"',
+      url: '/pages/upload/upload?FileType=Exam',
     })
   },
 
