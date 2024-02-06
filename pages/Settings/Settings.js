@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    notLogin:'',
+    notLogin:true,
     touch:false,
   },
   touchstart:function(){
