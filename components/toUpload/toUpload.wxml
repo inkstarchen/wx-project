@@ -1,0 +1,3 @@
+<view class="toUpload" bindtap="toUpload">
+  <image src="../../images/添加.svg" class="upload"></image>
+</view>

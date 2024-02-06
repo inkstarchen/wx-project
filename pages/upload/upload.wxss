@@ -1,0 +1,23 @@
+/* pages/upload/upload.wxss */
+.main{
+  padding-top: 200rpx;
+}
+label{
+  font-size: larger;
+  padding-left: 20rpx;
+  font-weight: 600;
+  display: inline-flex;
+  width: 300rpx;
+  height: 50rpx;
+  margin-bottom: 20rpx;
+}
+.form_border{
+  margin-bottom: 40rpx;
+  padding-bottom: 20rpx;
+  display:inline-flexbox;
+}
+input{
+  padding-left: 40rpx;
+  font-size: 35rpx;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

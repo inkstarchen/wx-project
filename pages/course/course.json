@@ -1,8 +1,9 @@
 {
   "usingComponents": {
     "userItem":"../../components/userItem/userItem",
-    "lastestItem":"../../components/latestItem/latestItem"
+    "lastestItem":"../../components/latestItem/latestItem",
+    "favor":"../../components/favor/favor",
+    "navigationBack":"../../components/navigationBack/navigationBack"
   },
-  "navigationBarTitleText": "课程",
-  "navigationBarBackgroundColor": "#A6E3E9"
+  "navigationBarTitleText": "课程"
 }

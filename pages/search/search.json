@@ -1,5 +1,7 @@
 {
   "usingComponents": {
     "courseList":"../../components/courseList/courseList"
-  }
+  },
+  "navigationBarBackgroundColor": "#00E0FF",
+  "navigationBarTitleText": "发现"
 }

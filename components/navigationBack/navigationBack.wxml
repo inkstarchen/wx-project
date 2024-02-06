@@ -1,0 +1,1 @@
+<view class="back" bind:tap="back"><image  class="image" src="../../images/返回.svg"></image></view>

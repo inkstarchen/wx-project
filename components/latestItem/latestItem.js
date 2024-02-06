@@ -29,22 +29,22 @@ Component({
       const data = this.properties.item;
       if(data.name == '读物推荐'){
         wx.navigateTo({
-          url: '/pages/recommend/recommend?CourseName='+this.properties.CourseName,
+          url: '/pages/recommend/recommend?CourseName='+this.properties.CourseName+'&FileType=Reading',
         })
       }
       if(data.name == '历年卷'){
         wx.navigateTo({
-          url: '/pages/exam/exam?CourseName='+this.properties.CourseName,
+          url: '/pages/exam/exam?CourseName='+this.properties.CourseName+'&FileType=Exam',
         })
       }
       if(data.name == '资料'){
         wx.navigateTo({
-          url: '/pages/resource/resource?CourseName='+this.properties.CourseName,
+          url: '/pages/resource/resource?CourseName='+this.properties.CourseName+'&FileType=Resource',
         })
       }
       if(data.name == '笔记'){
         wx.navigateTo({
-          url: '/pages/note/note?CourseName='+this.properties.CourseName,
+          url: '/pages/note/note?CourseName='+this.properties.CourseName+'&FileType=Note',
         })
       }
       var json = [

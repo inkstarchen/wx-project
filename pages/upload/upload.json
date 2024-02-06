@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "navigationBack":"../../components/navigationBack/navigationBack",
+    "ResourceList":"../../components/ResourceList/ResourceList"
+  }
+}

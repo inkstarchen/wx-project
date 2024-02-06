@@ -1,3 +1,3 @@
-<view bind:tap="click">
+<view bind:tap="click" class="favor_box" >
     <image src="{{item.favor?'../../images/收藏1.png':'../../images/收藏0.png'}}" mode="aspectFill" class="favor"></image>
 </view>

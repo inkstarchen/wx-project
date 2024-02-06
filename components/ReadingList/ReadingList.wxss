@@ -1,22 +1,132 @@
 /* components/ReadingList.wxss */
+.favor_view{
+  transition: 1s;
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  transform: translateX(20rpx) translateY(1100rpx);
+  z-index: 3;
+}
+
+.favor{
+  transition: 0.5s;
+  width: 0;
+  overflow: hidden;
+  height: 0;
+}
+
 .content-item{
+  transition: 1s ;
   left: 10vw;
+  display: flex;
+  justify-content: center;
   position: relative;
-  flex-shrink: 0;
+
   margin-right:20vw;
-  background-color: #c0b1b1;
+  background-color: #ffffff;
   height: 70vh;
   width:80vw;
   margin-top: 10vh;
-  border-radius: 4vw;
+  border-radius: 40rpx;
+}
+.content-item_view{
+  transition: 1s;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right:20vw;
+  background-color: #ffffff;
+  height: 80vh;
+  width:100vw;
+  margin-top: 20vh;
+  border-radius: 40rpx;
+
 }
 
-.image{
-  margin-top: 10rpx;
-  width: 100%;
-  background-color: #7C7575;
-  border-top-left-radius: 4vw;
-  border-top-right-radius: 4vw;
+.image_box{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40rpx;
   display: inline-block;
-  height:30vh;
+  height:300rpx;
+}
+.image{
+  transition: 1s;
+  border-radius: 40rpx;
+  width: 400rpx;
+}
+.image_view{
+  border: royalblue solid 2rpx;
+margin-left: -300rpx;
+margin-top: -100rpx;
+  transition: 1s;
+  border-radius: 100rpx;
+  width: 200rpx;
+  height: 200rpx;
+}
+.BookName{
+  transition: 1s ;
+  position: absolute;
+  top:600rpx;
+  font-size: 60rpx;
+  font-weight: 800;
+  padding: 20rpx;
+  border-radius: 40rpx;
+}
+.BookName_view{
+  transition: 1s;
+  position: absolute;
+  top:230rpx;
+  width: 300rpx;
+  transform: translateX(140rpx);
+  font-size: 60rpx;
+  font-weight: 800;
+  padding: 40rpx;
+  border-radius: 80rpx;
+  background-color: #f5f5f5;
+}
+.lines{
+  color: rgba(255, 255, 255, 0);
+  width: 450rpx;
+  height: 800rpx;
+  position: absolute;
+}
+.lines_view{
+  transition:1s 1s;
+  width: 450rpx;
+  height: 800rpx;
+  font-size: 30rpx;
+  position:absolute;
+  top:500rpx;
+  text-indent: 40rpx;
+  overflow-y: auto;
+  z-index: 3;
+}
+.ViewMore{
+  transition: 1s;
+  position: absolute;
+  top:900rpx;
+  font-size: 60rpx;
+  font-weight: 800;
+  padding: 40rpx;
+  border-radius: 60rpx;
+  color: #ffffff;
+  background-color: #0095ff;
+  z-index: 2;
+}
+
+.Close{
+  transition: 1s;
+  position: absolute;
+  top:1400rpx;
+  font-size: 60rpx;
+  font-weight: 800;
+  padding: 40rpx;
+  border-radius: 60rpx;
+  color: #ffffff;
+  background-color: #0095ff;
+  z-index: 2;
 }
