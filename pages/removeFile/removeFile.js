@@ -14,7 +14,7 @@ Page({
     })
   },
   submitForm:function(e){
-    for(var i=0;i<length(this.data.options);i++){
+    for(var i=0;i<this.data.options.length;i++){
       db.collection("Resource").doc(items[i]._id).remove({
         success:function(res){
           console.log(res.data)
