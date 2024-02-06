@@ -1,4 +1,4 @@
 .favor{
-  width: 100rpx;
-  height:100rpx;
+  width: 80rpx;
+  height:80rpx;
 }

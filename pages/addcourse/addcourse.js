@@ -1,3 +1,4 @@
+const app = getApp()
 const db = wx.cloud.database()//全局变量放在page外面
 Page({
 
@@ -6,66 +7,95 @@ Page({
    */
   data: {
     orderImage:"",
-    orderText:"",
     showImage_url: '',
     "Name":"",
+    "Recommend":"",
+    "FileId":"",
     "Info":""
   },
-
-  formsubmit: function(e) {
-    this.setData({
-      orderImage: e.detail.value.orderImage,
-      orderText: e.detail.value.orderText
-    })
-    const wxreq = wx.request({
-      url: 'cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/课程',//后台接口路径
-      data: {
-        'orderText': this.data.orderText,
-        'orderImage': this.data.showImage_url
-      },
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT  
-      header: {
-        'Content-Type': "application/x-www-form-urlencoded",
-        'Cookie': 'SESSION=' + wx.getStorageSync("sessionId")
-      }, // 设置请求的 header 
-      success: function (res) {
-        console.log("提交任务成功");
-        wx.navigateTo({//页面跳转
-          url: '/pages/search/search',
-        })
-        wx.showModal({//提示弹框
-          title: '提示',
-          content: '提交成功，请耐心等待审核。',
-          showCancel: false, //是否显示取消按钮 
-          fail: function (res) { }, //接口调用失败的回调函数
-          complete: function (res) { }, //接口调用结束的回调函数（调用成功、失败都会执行）
-        })
-      },
-      fail: function () {
-        console.log("请求数据失败");
-      }
-    })
-    
-  },
-
-  bindSubmit:function(res){
+bindSubmit:function(res){
     console.log(res)
-    
     var Name = res.detail.value.Name
     var Info = res.detail.value.Info
-   
-
-    db.collection("Courses").add({
-      data: {
-        "Name":Name,
-        "Info":Info
-      },
-      success: function(res){
-        console.log(res)
-        wx.hideLoading()
+    var Recommend = res.detail.value.Recommend
+    var tempFilePaths = this.data.tempFilePaths
+    const db = wx.cloud.database();
+    const collection = db.collection("Courses");
+    collection.where({
+      Name:Name
+    }).get({
+      success: res => {
+        if(res.data.length != 0){
+          console.log("no")
+          wx.showModal({
+            title: '警告',
+            content: '同名课程已经被创建！',
+          })
+        }else{
+          console.log("no");
+          for(let i=0; i < tempFilePaths.length; i++){//多个图片的循环上传
+            wx.cloud.uploadFile({//上传至微信云存储
+              cloudPath:'课程/' + new Date().getTime() + "_" +  Math.floor(Math.random()*1000) + ".jpg",//使用时间戳加随机数作为上传至云端的图片名称
+              filePath:tempFilePaths[i],// 本地文件路径
+              success: res => {
+                // 返回文件 ID
+                console.log("上传成功",res.fileID)
+                that.setData({
+                  images:res.fileID//获取上传云端的图片在页面上显示
+                })
+                wx.showToast({
+                  title: '上传成功',
+                });
+              }
+            })
+          }
+          var FileId = this.data.images
+          db.collection("Courses").add({
+            data: {
+              "Name":Name,
+              "Recommend":Recommend,
+              "Info":Info,
+              "FileId":FileId
+            },
+            success: function(res){
+              console.log(res)
+              wx.hideLoading()
+              wx.navigateBack({
+                delta:1,
+                success: res =>{
+                  wx.showToast({
+                    title: '课程创建成功',
+                  })
+                },
+                fail: err =>{
+                  console.log(err);
+                },
+              })
+            }
+          })
+        }
       }
     })
   },
+
+  upload(){
+    let that=this;
+    wx.chooseImage({//异步方法
+      count: 9,//最多选择图片数量
+      sizeType:['original', 'compressed'],//选择的图片尺寸 原图，压缩图
+      sourceType:['album','camera'],//相册选图，相机拍照
+      success(res){
+        //tempFilePaths可以作为图片标签src属性
+        const tempFilePaths = res.tempFilePaths
+         console.log("选择成功",res)
+         that.setData({
+          tempFilePaths:res.tempFilePaths,
+          images:res.tempFilePaths[0]
+         });
+      }
+    })
+  },
+
   onLoad:function(options) {
     db.collection('Courses').get({
       success: res=>{
@@ -81,34 +111,6 @@ Page({
   },
 
 
-  uploadimg: function() {
-    var that = this;
-    //选择图片
-    wx.chooseImage({
-      count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function(res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        var tempFilePaths = res.tempFilePaths[0]
-        that.setData({
-          showImage_url: tempFilePaths
-        })
-        //图片上传
-        wx.uploadFile({
-          url: 'cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/课程',//调用后台接口的路径
-          method:'POST',
-          filePath: that.data.showImage_url,
-          name: '课程',//此处注意要与后台保持一致
-          header: {
-            "Content-Type": false,
-          },
-          //formdata:adds,
-          success: function(res) {}
-        })
-      }
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载

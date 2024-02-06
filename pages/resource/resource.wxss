@@ -1,4 +1,10 @@
 /* pages/zhiliao/zhiliao.wxss */
+page{
+  background-color: #f5f5f5;
+}
+.main{
+  padding-top:200rpx;
+}
 .homework {
   width: 300px;
   height: 60px;

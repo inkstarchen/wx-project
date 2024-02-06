@@ -1,14 +1,17 @@
 .main{
   text-align: center;
   align-items: center;
-  padding-top: 5vh;
+  padding-top: 200rpx;
+  height: 86vh;
+  overflow: hidden;
 }
 .profile{
   display: inline-block;
   margin-bottom: 10vh;
 }
 .profile_photo{
-  left: 15vw;
+  left: 6vw;
+  position: relative;
   background-color: rgb(255, 255, 255);
   height: 250rpx;
   width: 250rpx;
@@ -16,9 +19,8 @@
   border: solid #B8B0B0 1rpx;
 }
 .edit{
-  position: absolute;
-  top:240rpx;
-  left: 420rpx;
+  position: relative;
+  left: -20rpx;
   background-color: #A1EAFB;
   width: 70rpx;
   height: 70rpx;
@@ -38,4 +40,3 @@
   color: #B8B0B0;
   margin-bottom: 3vh;
 }
-

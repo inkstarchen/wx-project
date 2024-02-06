@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    searchTerm:"",
+    none:true,
     Exams:[]
   },
   
@@ -28,7 +28,7 @@ Page({
         for(let i = 0; i < myNotes.length; i++){
           try {
             const result = await Resource.where({
-              FileName: myNotes[i]
+              _id: myNotes[i]
             }).get();
             console.log(result.data[0]);
             Notes.push(result.data[0]);
@@ -37,9 +37,12 @@ Page({
           }
         }
         console.log(Notes);
-        this.setData({
-          Notes:Notes,
-        }) 
+        if(Notes.length != 0){
+          this.setData({
+            Notes:Notes,
+            none:false,
+          }) 
+        }
       },
       fail: err =>{
         console.error("获取失败",err);

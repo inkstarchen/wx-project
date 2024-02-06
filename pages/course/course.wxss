@@ -1,80 +1,82 @@
 /* pages/course/course.wxss *//* pages/user/user.wxss */
-page {
-  background-color: #6B9297;
-  width:700rpx;
-  margin:0 auto;
-  padding-top: 10rpx;
-  padding-bottom: 110rpx;
+.main{
+  padding-top: 100rpx;
+  background-color: #f5f5f5;
 }
 
-/* .latest {
-  padding-top: 20rpx;
-} */
-
-.late-content {
-  width: 350rpx;
-  height: 350rpx;
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 30rpx;
+.favor{
+  position: absolute;
+  left: 500rpx;
+  top:300rpx;
 }
-.scrollarea {
-  flex: 1;
-  overflow-y: hidden;
+.info_box image {
+  z-index: 0;
 }
-
-
-
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #aaa;
-  width: 80%;
-}
-
-.userinfo-avatar {
-  overflow: hidden;
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
-.avatar-wrapper {
-  padding: 0;
-  width: 56px !important;
-  border-radius: 8px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-
-.avatar {
-  display: block;
-  width: 56px;
-  height: 56px;
-}
-
-.nickname-wrapper {
-  display: flex;
+.info_box{
   width: 100%;
-  padding: 16px;
-  box-sizing: border-box;
-  border-top: .5px solid rgba(0, 0, 0, 0.1);
-  border-bottom: .5px solid rgba(0, 0, 0, 0.1);
-  color: black;
+  top:0;
+  position: absolute;
+  z-index: 0;
+  flex-direction: row;
+  display: flex;
+  height: 45vh;
 }
 
-.nickname-label {
-  width: 105px;
+.image_box{
+  z-index: 0;
+  width: 300rpx;
+  border-radius:100%;
+  height: 300rpx;
+  overflow: hidden;
+  margin: 60rpx;
+  border: solid rgb(182, 182, 182) 5rpx;
 }
 
-.nickname-input {
-  flex: 1;
+.image_box image{
+  height: 300rpx;
+  width: 300rpx;
 }
+.name_box{
+  font-size: 80rpx;
+  position: relative;
+  top:-50rpx;
+  width: 600rpx;
+  left: 10vw;
+}
+.info{
+  text-indent: 40rpx;
+  padding: 40rpx;
+  height: auto;
+  width: 570rpx;
+  margin-left: 55rpx;
+  background-color: #ffffff;
+  border-radius: 40rpx;
+}
+
+.info::before{
+  content: "| ";
+  color: #6EB6FF;
+  font-weight:bolder;
+}
+
+.detail{
+  position: absolute;
+  top:40vh;
+  z-index: 1;
+  border-top-left-radius: 100rpx;
+  border-top-right-radius:100rpx ;
+  padding-top: 120rpx;
+  background:linear-gradient(135deg,#E0FCFF,#90F2FF,#6EB6FF);
+}
+.late-content {
+  margin-left: 70rpx;
+  display: inline-flex;
+  margin-top: 40rpx;
+}
+
+
+
+
+
+
+
