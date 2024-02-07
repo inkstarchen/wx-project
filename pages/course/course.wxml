@@ -13,8 +13,23 @@
     <view class="info">
       <text>{{Course.Info}}</text>
     </view>
-    <view  wx:for="{{broads}}" class="late-content" wx:for-item="item" wx:for-index="index" wx:key="index">
-      <lastestItem item="{{item}}" CourseName="{{CourseName}}"></lastestItem> 
+    <view class="late-content" >
+      <view class="item" bind:tap="handleHot1">
+        <text class="Number">{{Number[0]}}</text><text class="a">项</text>
+        <text class='name'>资料</text>
+      </view>
+      <view class="item" bind:tap="handleHot2">
+        <text class="Number">{{Number[1]}}</text><text class="a">张</text>
+        <text class='name'>历年卷</text>
+      </view>
+      <view class="item" bind:tap="handleHot3">
+        <text class="Number">{{Number[2]}}</text><text class="a">份</text>
+        <text class='name'>笔记</text>
+      </view>
+      <view class="item" bind:tap="handleHot4">
+        <text class="Number">{{Number[3]}}</text><text class="a">个</text>
+        <text class='name'>阅读推荐</text>
+      </view>
     </view>
   </view>
 </view>

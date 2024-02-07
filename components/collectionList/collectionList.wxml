@@ -3,5 +3,5 @@
     <image src="{{item.thumb}}" mode="aspectFill" class="icon"></image>
   </view>
   <text class="text">{{item.name}}</text>
-  <image src="../../images/右箭头.svg" class="arrow"></image>
+  <image src="../../images/返回.svg" class="arrow"></image>
 </view>

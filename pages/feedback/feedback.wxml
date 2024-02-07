@@ -1,0 +1,8 @@
+<!--pages/feedback/feedback.wxml-->
+<navigationBack></navigationBack>
+<view class="main">
+<form bindsubmit="submit">
+  <textarea placeholder="请输入你遇到的问题，或你对本小程序的建议。"  class='edit' name="edit"> </textarea>
+  <button type="primary" form-type="submit">提交</button>
+</form>
+</view>

@@ -30,7 +30,6 @@
 .testText{
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
 .more{
   width: 40rpx;
   padding: 20rpx;
@@ -54,4 +53,8 @@
   width: 80rpx;
   height:80rpx;
 }
+
+
+
+
 

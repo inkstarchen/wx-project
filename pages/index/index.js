@@ -1,4 +1,4 @@
-import userList from "../../datas/userList1.js";
+import userList from "../../datas/userList.js";
 
 Page({
 
@@ -8,6 +8,7 @@ Page({
   data: {
     notLogin:true,
     broads: [],
+    broads2: [],
     User:{
       AvatarUrl:'../../images/个人头像.png',
       Name:'游客',
@@ -21,7 +22,8 @@ Page({
    */
   onLoad(options) {
     this.setData({
-      broads: userList.latest,
+      broads: userList.latest1,
+      broads2: userList.latest2
     });
   },
 

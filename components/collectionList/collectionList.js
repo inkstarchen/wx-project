@@ -44,6 +44,7 @@ Component({
           content: '你还未登录',
         })
       }else{
+        
         if(data.name == '读物推荐'){
           wx.navigateTo({
             url: '/pages/myReading/myReading',
@@ -63,6 +64,10 @@ Component({
         }else if(data.name == '笔记'){
           wx.navigateTo({
             url: '/pages/mynote/mynote',
+          })
+        }else if(data.name == '使用反馈'){
+          wx.navigateTo({
+            url:'/pages/feedback/feedback',
           })
         }
       }

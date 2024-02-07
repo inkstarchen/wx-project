@@ -1,12 +1,13 @@
 .window{
  display: flex;
+ margin-top: 60rpx;
 }
 page{
   background-color: #f5f5f5;
 }
 
 .cover{
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 0, 0, 0);
   height: 100vh;
   width: 100vw;
   position: absolute;
@@ -25,33 +26,43 @@ page{
 }
 
 .prev{
-  position: absolute;
-  top: 40vh;
-  z-index: 2;
-  left: 5rpx;
-  height: 80rpx;
-  width: 70rpx;
+  box-shadow: rgb(211, 210, 210) 5rpx 5rpx 10rpx;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
   border-radius: 100%;
-  padding-left: 14rpx;
-  background-color: royalblue;
+  width: 100rpx;
+  top:680rpx;
+  left: 20rpx;
+  height: 100rpx;
   font-size: 60rpx;
   font-weight: 900;
-  color: #ffffff;
+  background-color: rgb(255, 255, 255);
+}
+
+.image{
+  width: 60rpx;
+  height: 60rpx;
 }
 
 .next{
-  position: absolute;
-  top: 40vh;
-  z-index: 2;
-  left: 88vw;
-  height: 80rpx;
-  width: 70rpx;
+  box-shadow: rgb(211, 210, 210) 5rpx -5rpx 10rpx;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
   border-radius: 100%;
-  padding-left: 14rpx;
-  background-color: royalblue;
+  width: 100rpx;
+  top:680rpx;
+  left: 640rpx;
+  height: 100rpx;
   font-size: 60rpx;
   font-weight: 900;
-  color: #ffffff;
+  transform: rotate(180deg);
+  background-color: rgb(255, 255, 255);
 }
 
 .scroll{
@@ -62,17 +73,22 @@ z-index: 0;
 
 
 .button{
-  height: 120rpx;
-  width: 120rpx;
+  box-shadow: rgb(211, 210, 210) 5rpx 5rpx 10rpx;
+  z-index: 5;
   display: flex;
-  position: absolute;
-  top:90vh;
-  left: 40vw;
   justify-content: center;
   align-items: center;
-  color: white;
-  background-color: #3490DE;
+  position:absolute;
   border-radius: 100%;
-  font-size: 80rpx;
-  padding-bottom: 10rpx;
+  width: 100rpx;
+  top:60rpx;
+  left: 200rpx;
+  height: 100rpx;
+  font-size: 60rpx;
+  font-weight: 900;
+  background-color: rgb(255, 255, 255);
+}
+
+.content{
+  width: 50rpx;
 }

@@ -1,0 +1,16 @@
+/* pages/feedback/feedback.wxss */
+.main{
+  padding-top: 300rpx;
+}
+
+.edit{
+  box-shadow: -5rpx -5rpx 10rpx #dfdede;
+  background-color: blanchedalmond;
+  margin-left: 25rpx;
+  font-size: 40rpx;
+  padding:70rpx;
+  width: 560rpx;
+  height: 600rpx;
+  overflow-y: auto;
+  margin-bottom: 100rpx;
+}

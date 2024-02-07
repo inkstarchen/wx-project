@@ -10,8 +10,15 @@
     <view class="collection_text">
       <text class="reminder">收藏的资料</text>
     </view>
+    <view class="collection_box">
     <view wx:for="{{broads}}" wx:for-item="item" wx:for-index="index" wx:key="index">
-     <collectionList item="{{item}}"></collectionList>
+     <collectionList item="{{item}}" style="border-left:rgb(255, 251, 0) solid 10rpx;"></collectionList>
+    </view>
+    </view>
+    <view class="collection_box">
+    <view wx:for="{{broads2}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+     <collectionList item="{{item}}" style="border-left:rgb(7, 255, 7) solid 10rpx;"></collectionList>
+    </view>
     </view>
   </view>
   

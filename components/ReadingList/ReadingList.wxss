@@ -1,20 +1,5 @@
 /* components/ReadingList.wxss */
-.favor_view{
-  transition: 1s;
-  overflow: hidden;
-  width: 80rpx;
-  height: 80rpx;
-  position: absolute;
-  transform: translateX(20rpx) translateY(1100rpx);
-  z-index: 3;
-}
 
-.favor{
-  transition: 0.5s;
-  width: 0;
-  overflow: hidden;
-  height: 0;
-}
 
 .content-item{
   transition: 1s ;
@@ -22,7 +7,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-
   margin-right:20vw;
   background-color: #ffffff;
   height: 70vh;
@@ -39,7 +23,7 @@
   background-color: #ffffff;
   height: 80vh;
   width:100vw;
-  margin-top: 20vh;
+  margin-top: 15vh;
   border-radius: 40rpx;
 
 }
@@ -49,7 +33,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 40rpx;
+  margin-top: 120rpx;
   display: inline-block;
   height:300rpx;
 }
@@ -70,7 +54,7 @@ margin-top: -100rpx;
 .BookName{
   transition: 1s ;
   position: absolute;
-  top:600rpx;
+  top:700rpx;
   font-size: 60rpx;
   font-weight: 800;
   padding: 20rpx;
@@ -115,6 +99,7 @@ margin-top: -100rpx;
   border-radius: 60rpx;
   color: #ffffff;
   background-color: #0095ff;
+  box-shadow: 5rpx 5rpx 5rpx rgb(165, 165, 163);
   z-index: 2;
 }
 
@@ -129,4 +114,48 @@ margin-top: -100rpx;
   color: #ffffff;
   background-color: #0095ff;
   z-index: 2;
+  box-shadow: 5rpx 5rpx 5rpx rgb(165, 165, 163);
 }
+
+.more{
+  position: absolute;
+  transform: translateY(-1130rpx) translateX(560rpx);
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 2;
+}
+
+.star{
+  position: absolute;
+  transform: translateY(-1140rpx)  translateX(100rpx);
+  height: 80rpx;
+  width:80rpx;
+  z-index: 2;
+}
+
+.star_no{
+  display: none;
+  position: absolute;
+  transform: translateY(-1140rpx)  translateX(100rpx);
+  height: 80rpx;
+  width:80rpx;
+  z-index: 2;
+}
+.more_no{
+  position: absolute;
+  transform: translateY(-1130rpx) translateX(560rpx);
+  width: 60rpx;
+  height: 60rpx;
+  z-index: 2;
+}
+
+.none{
+  display: none;
+}
+.index{
+  z-index: 2;
+}
+
+
+
+

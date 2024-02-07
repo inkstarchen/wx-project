@@ -4,8 +4,11 @@
   height: 120rpx;
   text-align: start;
   font-size: 35rpx;
-  font-weight: 700;
+  font-weight: 500;
+  width: 680rpx;
   align-items: center;
+  background-color: #ffffff;
+  border-bottom: solid 1rpx #cecece;
 }
 .touch{
   transition: 0.2s;
@@ -14,10 +17,12 @@
   height: 120rpx;
   text-align: start;
   font-size: 35rpx;
+  width: 680rpx;
   font-weight: 700;
   align-items: center;
 }
 .icon_box{
+  margin-left: 30rpx;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +31,8 @@
   height:90rpx;
 }
 .icon{
-  width: 50rpx;
-  height: 50rpx;
+  width: 46rpx;
+  height: 45rpx;
 
 }
 .text{
@@ -35,5 +40,6 @@
   width:510rpx;
 }
 .arrow{
-  width: 60rpx;
+  width: 35rpx;
+  transform: rotate(180deg) translateX(30rpx);
 }

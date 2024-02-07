@@ -16,7 +16,8 @@
     "pages/addcourse/addcourse",
     "pages/addReading/addReading",
     "pages/myReading/myReading",
-    "pages/upload/upload"
+    "pages/upload/upload",
+    "pages/feedback/feedback"
   ],
   "tabBar": {
     "custom": false,
@@ -31,10 +32,10 @@
         "iconPath": "images/个人中心.png"
       },
       {
-        "selectedIconPath": "images/课程.png",
+        "selectedIconPath": "images/发现.png",
         "pagePath": "pages/search/search",
         "text": "发现",
-        "iconPath": "images/课程.png"
+        "iconPath": "images/发现.png"
       }
     ]
   },

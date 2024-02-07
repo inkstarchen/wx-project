@@ -1,4 +1,4 @@
-// pages/logs/logs.js
+// pages/feedback/feedback.js
 Page({
 
   /**
@@ -62,5 +62,18 @@ Page({
    */
   onShareAppMessage() {
 
+  },
+  submit:function(res){
+    let text = res.detail.value.edit;
+    const db = wx.cloud.database();
+    const suggestions = db.collection('Suggestions');
+    suggestions.add({
+      data:{
+        suggestions:text,
+      }
+    });
+    wx.navigateBack({
+      delta:1,
+    });
   }
 })

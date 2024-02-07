@@ -61,11 +61,6 @@ Page({
     }
     console.log(this.data.currentindex);
   },
-  add(){
-    wx.navigateTo({
-      url: '/pages/addReading/addReading?CourseName='+this.data.CourseName,
-    })
-  },
   end:function(){
     this.setData({
       BlockId:'block'+this.data.currentindex

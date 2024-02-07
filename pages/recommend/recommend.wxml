@@ -8,8 +8,12 @@
 </view>
 </scroll-view>
 <view class="cover"></view>
-<view bindtap="prevPage" class="prev">{{'<'}}</view>
-<view bindtap="nextPage" class="next">{{">"}}</view>
+<view bindtap="prevPage" class="prev">
+<image src="../../images/返回.svg" class="image"></image>
+</view>
+<view bindtap="nextPage" class="next">
+  <image src="../../images/返回.svg" class="image"></image>
+</view>
 <view class="button" bindtap="add">
-  <view class='content'>+</view>
+  <image class='content' src="../../images/添加.svg"></image>
 </view>

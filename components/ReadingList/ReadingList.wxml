@@ -1,5 +1,4 @@
 <!--components/ReadingList.wxml-->
-<view class="{{viewmore?'favor_view':'favor'}}"><favor item="{{item}}"></favor></view>
 <view id="{{Block}}" >
     <view class="{{viewmore?'content-item_view':'content-item'}}">
     <view class="{{viewmore?'image_box_view':'image_box'}}">
@@ -12,6 +11,11 @@
     <text>{{item}}</text>
   </view>
 </scroll-view>
-  <view class="{{viewmore?'Close':'ViewMore'}}" bind:tap="viewmore">{{viewmore?'Close':'ViewMore'}}</view>
+  <view class="{{viewmore?'Close':'ViewMore'}}"  bind:tap="viewmore"  >{{viewmore?'Close':'ViewMore'}}</view>
     </view>
+    <view wx:if="{{OpenId != '0'}}"  class="index">
+    <image src="../../images/星星.svg" class="{{viewmore?'none':item.favor?'star':'star_no' }}"></image>
+    <image src="../../images/更多.svg" class="{{viewmore?'none':item.favor?'more':'more_no'}}" bind:tap="more"></image>
 </view>
+</view>
+
