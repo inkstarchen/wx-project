@@ -1,0 +1,41 @@
+/* components/showModel/showModel.wxss */
+.show{
+  height: 120rpx;
+  font-size: 50rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 40rpx;
+  margin-left: 20rpx;
+  width: 90vw;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20rpx;
+  box-shadow: 0rpx 10rpx 10rpx #dddddd;
+}
+
+.items{
+  transition: 1s;
+  overflow: hidden;
+  height:0rpx;
+}
+
+.items_show{
+  height: 600rpx;
+  overflow: auto;
+  transition: 1s;
+}
+
+.arrow{
+  position: absolute;
+  left: 88vw;
+  transform: rotate(180deg);
+  width: 40rpx;
+  transition: 0.5s;
+}
+
+.arrow_show{
+  position: absolute;
+  left: 88vw;
+  transform: rotate(270deg);
+  width: 40rpx;
+  transition: 0.5s;
+}

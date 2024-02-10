@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-    "ResourceList":"../../components/ResourceList/ResourceList"
-  }
+    "ResourceList":"../../components/ResourceList/ResourceList",
+    "navigationBack":"../../components/navigationBack/navigationBack"
+  },
+  "navigationBarTitleText": "资料"
 }

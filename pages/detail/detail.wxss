@@ -3,7 +3,9 @@
   height: 10vh;
   border-bottom: .5px solid rgba(0, 0, 0, 0.1);
 }
-
+.main{
+  padding-top: 200rpx;
+}
 .avatar-wrapper {
   float:right;
   padding: 0;
@@ -35,3 +37,4 @@
 .finish{
   margin-top:20rpx;
 }
+

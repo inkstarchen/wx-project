@@ -1,0 +1,23 @@
+<!--pages/upload/upload.wxml-->
+<navigationBack></navigationBack>
+<view class="main">
+  <form bindsubmit="submitForm" bindreset="resetForm">
+  <view class="form">
+    <view class="form_border">
+      <label>文件分类</label>
+      <input type="text" name="Category" placeholder="请输入文件分类" placeholder-style="font-weight:lighter"/>
+    </view>
+    <view class="form_border1">
+      <label>文件列表</label>
+      <view wx:for="{{uploadFiles}}" wx:for-item="item" wx:key="index">
+        <ResourceList item="{{item}}"></ResourceList>
+      </view>
+    </view>
+    <button type="primary" bindtap="uploadFileTap" style="margin-top: 45rpx;" data-type="file">上传文件</button>
+<button type="primary" style="margin-top: 30rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>
+</view>
+      <button form-type="submit" class="button">确认</button>
+      <button form-type="reset" class="button">重置</button>
+  </form>
+
+</view>

@@ -14,12 +14,23 @@ Component({
    * 组件的初始数据
    */
   data: {
+    touch:false
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    touchstart: function () {
+      this.setData({
+        touch:true
+      })
+    },
+    touchend:function(){
+      this.setData({
+        touch:false
+      })
+    },
     handlecollection: function(event) {
       let notLogin = wx.getStorageSync('notLogin');
       const data = this.properties.item;
@@ -36,7 +47,7 @@ Component({
         
         if(data.name == '读物推荐'){
           wx.navigateTo({
-            url: '/pages/recommend/recommend',
+            url: '/pages/myReading/myReading',
           })
         }else if(data.name == '历年卷'){
           wx.navigateTo({

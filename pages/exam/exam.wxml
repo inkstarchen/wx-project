@@ -1,7 +1,9 @@
 <!--pages/tests/tests.wxml-->
-<page-meta>
-  <navigation-bar title="历年卷" loading="true"></navigation-bar>
-</page-meta>
-<view wx:for="{{tests}}" wx:for-item="item" wx:for-index="index" wx:key="index"><ResourceList item="{{item}}"/></view>
-<button type="primary" bindtap="uploadFileTap" data-type="file">上传文件</button>
-<button type="primary" style="margin-top: 45rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>
+<navigationBack></navigationBack>
+<toUpload FileType="{{FileType}}" CourseName="{{CourseName}}"></toUpload>
+<view class="main">
+<view wx:for="{{category}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+<showModel Category="{{item}}" item="{{testList[index]}}"></showModel>
+</view>
+</view>
+

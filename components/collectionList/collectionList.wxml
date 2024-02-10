@@ -1,4 +1,4 @@
-<view class="collection_item" bind:tap="handlecollection">
+<view  class="{{touch? 'touch ':'collection_item'}}"  bind:touchstart="touchstart" bind:touchend="touchend"  bind:tap="handlecollection" >
   <view class="icon_box">
     <image src="{{item.thumb}}" mode="aspectFill" class="icon"></image>
   </view>

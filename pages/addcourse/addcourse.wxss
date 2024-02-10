@@ -2,38 +2,55 @@ view{
   height: 100rpx;
   margin-top: 20rpx;
 }
+page{
+  background-color: #f5f5f5;
+}
+.main{
+  padding-top: 200rpx;
+}
+.form{
+  background-color: #ffffff;
+  width: 90vw;
+  padding-top: 20rpx;
+  margin-left: 5vw;
+  height:auto;
+  border-radius: 20rpx;
+  box-shadow: 10rpx 10rpx 10rpx rgb(182, 182, 182);
+}
 input{
-  width: 750rpx;
+  text-align: right;
+  width: 380rpx;
   height: 60rpx;
-  display: block;
+  display: inline-flex;
   box-sizing: border-box
 }
 label{
+  font-size: larger;
+  padding-left: 50rpx;
+  color: #929191;
+  font-weight: 400;
   display: inline-flex;
-  width: 300rpx;
+  width: 200rpx;
   height: 50rpx;
-  margin-bottom: 20rpx;
 }
 .form_border{
-  margin: 20rpx,20rpx,20rpx,20rpx;
-  padding-bottom: 20rpx;
-  border-bottom: solid #b3aeae;
-  display:inline-flexbox;
- 
+  height: 80rpx;
+}
+.image_border{
+  height: 750rpx;
 }
 input{
+  padding-left: 40rpx;
   font-size: 35rpx;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding-bottom: 20rpx;
 }
 .button{
   align-items: center;
   text-align: center;
   color: #FFFFFF;
   border-radius: 25rpx;
-  padding: 10rpx;
   margin-top: 80rpx;
-  margin-bottom: 0rpx;
+  margin-bottom:40rpx;
   width:50%;
   height: 100rpx;
   /* z-index:666; */
@@ -42,11 +59,41 @@ input{
   justify-content:center;
   background-color: #259dff;
 }
+
+.image_box{
+  height: auto;
+
+}
+.image{
+  margin: 40rpx;
+  height: 400rpx;
+  display: inline-block;
+  width: 400rpx;
+  border:#259dff solid 1rpx;
+}
  
 .hover-button{
   position: relative;
   top: 3rpx;
   left: 3rpx;
   box-shadow:0px 0px 8px rgba(0, 0, 0, 0.1) inset;
-  background: rgb(195, 219, 182);
+  background: #1f84d6;
+}
+.add_image{
+  box-shadow: rgb(185, 185, 185) 5rpx 5rpx 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  width: 100rpx;
+  position: relative;
+  left: 280rpx;
+  height: 100rpx;
+  font-size: 60rpx;
+  font-weight: 900;
+  background-color: rgb(255, 255, 255);
+}
+
+.content{
+  width: 50rpx;
 }
