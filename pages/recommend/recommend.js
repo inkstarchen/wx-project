@@ -1,14 +1,12 @@
 Page({
   data: {
-    BlockId:'block0',
-    currentindex:0,
+    scrollLeft:0,
+    currentBlock: 'block1', // 初始停留在 block1
+    currentindex:1,
     BookList:[]
   },
   onLoad:function(options){
     const CourseName = options.CourseName;
-    this.setData({
-      CourseName:CourseName
-    });
     const db = wx.cloud.database();
     const Reading = db.collection("Reading");
     Reading.where({
@@ -18,38 +16,34 @@ Page({
         this.setData({
           BookList:res.data
         });
-        console.log(this.data.BookList);
       }
     })
   },
-  prevPage: function() {
-    if(this.data.currentindex >0){
-      this.setData({
-        currentindex:this.data.currentindex-1,
-        BlockId:'block'+(this.data.currentindex-1)
-      });
-
-    }
-    console.log(this.data.currentindex);
-  },
-  nextPage: function() {
-    var max = this.data.BookList.length-1
-    if(this.data.currentindex < max){
-      this.setData({
-        currentindex:this.data.currentindex+1,
-        BlockId:'block'+(this.data.currentindex+1)
-      });
-    }
-    console.log(this.data.currentindex);
-  },
-  add(){
-    wx.navigateTo({
-      url: '/pages/addReading/addReading?CourseName='+this.data.CourseName,
-    })
-  },
-  end:function(){
+  onScroll: function (event) {
+    const scrollLeft = event.detail.scrollLeft;
     this.setData({
-      BlockId:'block'+this.data.currentindex
+      scrollLeft: event.detail.scrollLeft  // 将 scrollLeft 的值保存在数据源中
+    });
+
+    
+  },
+  onmousedown:function(){
+    this.setData({
+      scrollstart:this.data.scrollLeft
     })
+  },
+  onmouseup:function(event){
+    console.log("12");
+    const scrollLeftend = this.data.scrollLeft;
+    const scrollLeftstart = this.data.scrollstart
+    const blockWidth = 400; // 每个方块的宽度
+    const blockIndex = Math.round((scrollLeftend-scrollLeftstart)/200) + this.data.currentindex;
+    this.setData({
+      currentindex:blockIndex
+    })
+    const currentBlock = 'block' + blockIndex;
+    this.setData({
+      currentBlock: currentBlock
+    });
   }
 });

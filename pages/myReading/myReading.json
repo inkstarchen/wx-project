@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-    "ReadingList":"../../components/ReadingList/ReadingList",
-    "navigationBack":"../../components/navigationBack/navigationBack"
-  },
-  "navigationBarTitleText": "读物推荐"
-}

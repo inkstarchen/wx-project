@@ -1,15 +1,16 @@
 /* components/courseList/courseList.wxss */
 .courseBox{
-  transition: 0.2s;
-  overflow: hidden;
   display: flex;
-  border-radius: 30rpx;
-  height: 260rpx;
-  width: 670rpx;
-  background-color: #ffffff;
-  margin-left:50rpx;
-  margin-top: 50rpx;
-  box-shadow: rgb(126, 124, 124) 5rpx 5rpx 10rpx;
+  border-style: solid;
+  border-width: 3rpx;
+  border-radius: 64rpx;
+  height: 100rpx;
+  width: 650rpx;
+  padding: 20rpx;
+  background-color: #f5f5f5;
+  margin-left:30rpx;
+  margin-right: 30rpx;
+  margin-top: 15rpx;
 }
 
 .courseInfo{
@@ -17,46 +18,28 @@
 }
 .coursePicBox{
   display: flex;
+  border-style: solid;
+  border-width: 3rpx;
+  background-color: #ffffff;
+  border-radius: 50rpx;
   margin-right: 30rpx;
 }
 .coursePic{
-  width: 250rpx;
-  height: auto;
+  width: 80rpx;
+  height: 80rpx;
 }
 .course{
-  margin-left: 20rpx;
   display: flex;
   flex-direction: column;
 }
-.touch{
-  transition: 0.2s;
-  background-color: rgb(230,230,230);
-  overflow: hidden;
-  display: flex;
-  border-radius: 30rpx;
-  height: 260rpx;
-  width: 670rpx;
-  margin-left:50rpx;
-  margin-top: 50rpx;
-  box-shadow: rgb(126, 124, 124) 5rpx 5rpx 20rpx;
-}
 .courseName{
-  width: 400rpx;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  padding-top: 50rpx;
-  font-size: 42rpx;
   font-weight: 600;
 }
 
 .courseDetail{
-  color: #b1afaf;
-  font-weight: 700;
-  font-size: 35rpx;
-  margin-top:20rpx;
-  width: 350rpx;
-  height: 75rpx;
+  width: 450rpx;
+  font-size: small;
   text-overflow: ellipsis;
   overflow: hidden;
+  white-space: nowrap;
 }

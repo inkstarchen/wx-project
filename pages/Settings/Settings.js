@@ -5,19 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    notLogin:true,
-    touch:false,
+    notLogin:''
+
   },
-  touchstart:function(){
-    this.setData({
-      touch:true,
-    });
-  },
-  touchend:function(){
-    this.setData({
-      touch:false,
-    });
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -51,9 +42,6 @@ Page({
             wx.cloud.downloadFile({
               fileID:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/test/"+this.data.User.AvatarUrl.slice(11),
             });
-            wx.showToast({
-              title: '账号登录成功',
-            })
             }else{
               wx.cloud.downloadFile({
                 fileID:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/系统图片/个人头像.png",
@@ -86,9 +74,6 @@ Page({
     this.setData({
       OpenId:"",
       notLogin:true,
-    })
-    wx.showToast({
-      title: '账号注销成功',
     })
   },
   /**

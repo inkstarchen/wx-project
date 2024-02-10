@@ -1,5 +1,4 @@
-<navigationBack></navigationBack>
-<view class='main'>
+<view>
   <form bindsubmit="finish">
     <view class="item">
       <view class="text_box">

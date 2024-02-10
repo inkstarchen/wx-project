@@ -7,7 +7,7 @@
 }
 .profile{
   display: inline-block;
-  margin-bottom: 5vh;
+  margin-bottom: 10vh;
 }
 .profile_photo{
   left: 6vw;
@@ -33,6 +33,7 @@
   white-space: pre-wrap;
   font-size: 60rpx;
   font-weight:700;
+  font-family:cursive;
 }
 .collection_text{
   display: inline-block;
@@ -45,7 +46,6 @@
 
 .collection_box{
   margin-bottom: 50rpx;
-  margin-top: 30rpx;
   border-radius: 20rpx;
   box-shadow: 5rpx 5rpx 10rpx #ebebeb;
   height: auto;

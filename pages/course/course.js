@@ -115,7 +115,7 @@ onLoad: function(options) {
   },
   handleHot1: function(event){
       wx.navigateTo({
-        url: '/pages/recommend/recommend?CourseName='+this.data.CourseName+'&FileType=Reading',
+        url: '/pages/resource/resource?CourseName='+this.data.CourseName+'&FileType=Resource',
       })
     },
    handleHot2:function(){
@@ -125,12 +125,12 @@ onLoad: function(options) {
     },
     handleHot3:function(){
       wx.navigateTo({
-        url: '/pages/resource/resource?CourseName='+this.data.CourseName+'&FileType=Resource',
+        url: '/pages/note/note?CourseName='+this.data.CourseName+'&FileType=Note',
       })
     },
     handleHot4:function(){
       wx.navigateTo({
-        url: '/pages/note/note?CourseName='+this.data.CourseName+'&FileType=Note',
+        url: '/pages/recommend/recommend?CourseName='+this.data.CourseName+'&FileType=Reading',
       })
     }
 })
