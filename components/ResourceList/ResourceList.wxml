@@ -1,7 +1,7 @@
 <!--components/testList/testList.wxml-->
 <view class="test-item" >
   <view class="profile">
-    <image src="/images/试卷.svg" mode="aspectFit" class="test-img"/>
+    <image src="{{path}}" mode="aspectFit" class="test-img"/>
   </view>
   <view class="test-textContainer" bindtap="OpenFile">
     <text class="testTitle">{{item.FileName}}</text>

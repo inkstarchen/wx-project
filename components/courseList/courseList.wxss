@@ -60,3 +60,29 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+
+.more{
+  transform: translateX(-120rpx) translateY(170rpx);
+  width: 40rpx;
+  padding: 20rpx;
+  height:40rpx;
+}
+
+.more_no{
+  transform: translateX(-40rpx) translateY(170rpx);
+  width: 40rpx;
+  padding: 20rpx;
+  height: 40rpx;
+
+}
+
+.star{
+  transform: translateY(170rpx) translateX(-320rpx);
+  width: 80rpx;
+  height: 80rpx;
+}
+.star_no{
+  display: none;
+  width: 80rpx;
+  height:80rpx;
+}

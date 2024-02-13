@@ -15,7 +15,8 @@ Component({
    * 组件的初始数据
    */
   data: {
-    OpenId:'0'
+    OpenId:'0',
+    path:'/images/资料.svg',
   },
   lifetimes:{
     ready() {
@@ -23,6 +24,20 @@ Component({
         item:this.properties.item,
         'item.favor':false
       })
+      let File = this.data.item.FileId;
+      let suffix = '';
+      for(let i = File.length-1; File[i] != '.'; i-- ){
+        suffix =File[i] + suffix;
+      }
+      if(suffix == 'pptx' || suffix == 'ppt'){
+        this.setData({
+          path:'/images/ppt.svg'
+        })
+      }else if(suffix == 'doc' || suffix == 'docx'){
+        this.setData({
+          path:'/images/word.svg'
+        })
+      }
       const OpenId = wx.getStorageSync('OpenId');
       if(OpenId){
         this.setData({

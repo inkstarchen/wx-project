@@ -9,6 +9,11 @@ Page({
     FileType:'',
     upLoadFiles:[],
   },
+  reset:function(){
+    this.setData({
+      uploadFiles:[],
+    })
+  },
   submitForm:function(e){
     var Category=e.detail.value.Category
     if(Category == ''){

@@ -8,6 +8,10 @@
       <text class="courseName">{{item.Name}}</text>
       <text class="courseDetail">建议：{{item.Recommend}}</text>
     </view>
+ 
   </view >
-    
+  <view wx:if="{{OpenId != '0'}}" style="display: flex;z-index:2 ; transform: translateX(-100rpx);">
+    <image src="../../images/星星.svg" class="{{item.favor?'star':'star_no'}}"></image>
+    <image src="../../images/更多.svg" class="{{item.favor?'more':'more_no'}}" bind:tap="more"></image>
+  </view>
 </view>

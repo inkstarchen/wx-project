@@ -17,7 +17,7 @@
 <button type="primary" style="margin-top: 30rpx;" bindtap="uploadFileTap" data-type="img">上传图片</button>
 </view>
       <button form-type="submit" class="button">确认</button>
-      <button form-type="reset" class="button">重置</button>
+      <button form-type="reset" class="button" bind:tap="reset">重置</button>
   </form>
 
 </view>

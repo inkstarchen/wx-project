@@ -8,7 +8,7 @@
   </view>
   <view class="form_border">
     <label>课程介绍</label>
-    <input name="Info"  placeholder="介绍" type=""/>
+    <input name="Info"  placeholder="介绍" type="" maxlength="100000" />
   </view>
   <view class="form_border">
     <label>学习建议</label>
