@@ -23,11 +23,9 @@ Page({
    */
   onLoad(options) {
       const notLogin = wx.getStorageSync('notLogin');
-      if(notLogin){
         this.setData({
           notLogin:notLogin
         })
-      }
   },
   login:function(){
     wx.setStorageSync('notLogin', false)

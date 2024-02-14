@@ -25,6 +25,8 @@ Page({
       broads: userList.latest1,
       broads2: userList.latest2
     });
+    wx.setStorageSync('notLogin', true);
+    wx.setStorageSync('OpenId', '0');
   },
 
   /**
@@ -39,7 +41,7 @@ Page({
    */
   onShow(options) {
     const OpenId = wx.getStorageSync('OpenId');
-    if(OpenId != ""){
+    if(OpenId != "0"){
       const db = wx.cloud.database();
       const User = db.collection('User');
       User.where({

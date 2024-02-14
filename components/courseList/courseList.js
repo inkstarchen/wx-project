@@ -18,11 +18,10 @@ Component({
         'item.favor':false
       })
       const OpenId = wx.getStorageSync('OpenId');
-      if(OpenId){
         this.setData({
           OpenId:OpenId
         })
-      }
+      console.log(this.data.OpenId);
       const db = wx.cloud.database();
       const collection = db.collection("User");
       collection.where({

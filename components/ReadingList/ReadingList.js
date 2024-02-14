@@ -36,7 +36,7 @@ Component({
       });
       const db = wx.cloud.database();
       const openid = wx.getStorageSync('OpenId');
-      if(openid){
+      if(openid != '0'){
         const User = db.collection('User');
         User.where({
           _openid: openid,
@@ -47,7 +47,6 @@ Component({
                 'item.favor':true,
               });
             }else{
-
             }
           },
           fail: err => {

@@ -24,7 +24,6 @@ Page({
         console.log(res.data)
         const OpenId = wx.getStorageSync('OpenId');
         const User = db.collection('User');
-        console.log('123');
         this.setData({
           courses: res.data
         });
