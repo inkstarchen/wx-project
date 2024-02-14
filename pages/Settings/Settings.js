@@ -23,9 +23,11 @@ Page({
    */
   onLoad(options) {
       const notLogin = wx.getStorageSync('notLogin');
-      this.setData({
-        notLogin:notLogin
-      })
+      if(notLogin){
+        this.setData({
+          notLogin:notLogin
+        })
+      }
   },
   login:function(){
     wx.setStorageSync('notLogin', false)
@@ -55,24 +57,23 @@ Page({
               title: '账号登录成功',
             })
             }else{
-              wx.cloud.downloadFile({
-                fileID:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/系统图片/个人头像.png",
-                complete:res =>{
                   this.setData({
                     notLogin:false
                   });
                   db.collection('User').add({
                     data:{
-                      AvatarUrl:res.tempFilePath,
+                      AvatarUrl:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/系统图片/个人头像.png",
                       Courses:[],
                       Name:'用户',
+                      Exams:[],
+                      Notes:[],
+                      Readings:[],
+                      Resource:[],
                     }
                   });
                   wx.navigateTo({
                     url: '/pages/detail/detail',
                   });
-                }
-              });
             }
           }
         });

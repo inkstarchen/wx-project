@@ -18,10 +18,12 @@
     </view>
     <view class="{{touch?'touch':'button'}}" bind:touchstart="touchstart" bind:touchend="touchend">
     <view wx:if="{{notLogin}}">
-          <view class="login" bind:tap="login"> 登录 </view>
+      <view class="login" bind:tap="login"> 登录 </view>
+          
     </view>
     <view wx:else>
-          <view class="logout" bind:tap="logout"> 注销</view>
+
+      <view class="logout" bind:tap="logout"> 注销</view>
     </view>
   </view>
 </view>

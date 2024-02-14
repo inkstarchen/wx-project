@@ -40,39 +40,36 @@ bindSubmit:function(res){
               success: res => {
                 // 返回文件 ID
                 console.log("上传成功",res.fileID)
-                that.setData({
+                this.setData({
                   images:res.fileID//获取上传云端的图片在页面上显示
                 })
-                wx.showToast({
-                  title: '上传成功',
-                });
+                var FileId = this.data.images
+                db.collection("Courses").add({
+                  data: {
+                    "Name":Name,
+                    "Recommend":Recommend,
+                    "Info":Info,
+                    "FileId":FileId
+                  },
+                  success: function(res){
+                    console.log(res)
+                    wx.hideLoading()
+                    wx.navigateBack({
+                      delta:1,
+                      success: res =>{
+                        wx.showToast({
+                          title: '课程创建成功',
+                        })
+                      },
+                      fail: err =>{
+                        console.log(err);
+                      },
+                    })
+                  }
+                })
               }
             })
           }
-          var FileId = this.data.images
-          db.collection("Courses").add({
-            data: {
-              "Name":Name,
-              "Recommend":Recommend,
-              "Info":Info,
-              "FileId":FileId
-            },
-            success: function(res){
-              console.log(res)
-              wx.hideLoading()
-              wx.navigateBack({
-                delta:1,
-                success: res =>{
-                  wx.showToast({
-                    title: '课程创建成功',
-                  })
-                },
-                fail: err =>{
-                  console.log(err);
-                },
-              })
-            }
-          })
         }
       }
     })
