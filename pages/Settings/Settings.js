@@ -81,9 +81,9 @@ Page({
 
   logout:function(){
     wx.setStorageSync('notLogin', true);
-    wx.removeStorageSync('OpenId');
+    wx.setStorageSync('OpenId', '0')
     this.setData({
-      OpenId:"",
+      OpenId:"0",
       notLogin:true,
     })
     wx.showToast({
