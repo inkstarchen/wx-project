@@ -1,5 +1,6 @@
-Page({
 
+  const db = wx.cloud.database()
+  const collection = db.collection("Courses")Page({
   /**
    * 页面的初始数据
    */
@@ -12,8 +13,6 @@ Page({
       searchTerm: e.detail.value
     })
     let searchItem = e.detail.value
-    const db = wx.cloud.database()
-    const collection = db.collection("Courses")
     collection.where({
       Name: db.RegExp({
         regexp: searchItem,
@@ -52,6 +51,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    collection.where({
+      Name: db.RegExp({
+        regexp: "",
+        options: 'i'  // 表示不区分大小写
+      })
+    }).get({
+      success: res => {
+        this.setData({
+          courses: res.data
+        });
+      },
+      fail: err => {
+        console.error("查询失败", err)
+      }
+    });
   },
 
   /**
