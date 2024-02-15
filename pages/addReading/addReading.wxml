@@ -1,0 +1,25 @@
+<navigationBack></navigationBack>
+<view class="main">
+<form bindsubmit="bindSubmit">
+<view class="form">
+  <view class="form_border">
+    <label>读物名称</label>
+    <input name="Name" auto-focus placeholder="  请填写读物名称" />
+  </view>
+  <view class="image_border">
+  <label>封面</label>
+         <input style="display:none" name = "orderImage" value='{{showImage_url}}'></input>
+         <view class="image_box">
+            <image src='{{images}}' class='image'></image>
+          </view>
+            <button bindtap="upload" class="add_image">+</button>   
+   <view class="form_border1">
+    <label>推荐信息</label>
+    <textarea name="Recommend"  placeholder="  请填写推荐信息" maxlength="10000000000"></textarea>
+  </view>
+</view>
+          </view>
+          <button hover-class="hover-button" class="button" form-type="submit">提交</button>
+    <button hover-class="hover-button" class="button" form-type="reset" style="margin-top: 10rpx;">重置</button>     
+</form>  
+</view>

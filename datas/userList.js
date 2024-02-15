@@ -1,27 +1,38 @@
-var json = [
-
-]
-
-var broad = [
+var broad2 = [
   {
-      name: "资料",
-      thumb: "https://d.musicapp.migu.cn/data/oss/service66/00/2b/b4/0n"
+      name: "课程",
+      thumb:"/images/课程.png"
+  },
+  {
+    name:"资料",
+    thumb:"/images/资料.svg"
   },
   {
       name: "历年卷",
-      thumb: "https://d.musicapp.migu.cn/data/oss/service66/00/2b/2z/te"
+      thumb:"/images/试卷.svg"
   },
   {
       name: "笔记",
-      thumb: "https://d.musicapp.migu.cn/data/oss/service66/00/2b/b3/zb"
+      thumb:"/images/笔记.svg"
   },
   {
       name: "读物推荐",
-      thumb: "https://d.musicapp.migu.cn/data/oss/service66/00/2b/b4/0t_m.webp"
+      thumb:"/images/书本.svg"
+  }
+]
+
+var broad3 = [
+  {
+    name:"设置",
+    thumb:"/images/设置.svg"
+  },
+  {
+    name:"使用反馈",
+    thumb:"/images/投诉建议.svg"
   }
 ]
 
 module.exports = {
-  users: json,
-  latest: broad
+  latest1: broad2,
+  latest2: broad3,
 }

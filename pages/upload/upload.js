@@ -5,13 +5,56 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+    CourseName:'',
+    FileType:'',
+    upLoadFiles:[],
+  },
+  reset:function(){
+    this.setData({
+      uploadFiles:[],
+    })
   },
   submitForm:function(e){
     var Category=e.detail.value.Category
-    this.setData({
-      Category:Category
-    })
+    if(Category == ''){
+      wx.showModal({
+        title: '警告',
+        content: '未填写文件分类',
+      })
+    }else{
+      const db = wx.cloud.database();
+      const Resource = db.collection('Resource');
+      for(let i = 0; i < this.data.upLoadFiles.length ; i++){
+        let file = this.data.upLoadFiles[i];
+        console.log('upload');
+        Resource.add({
+          data:{
+            Category:Category,
+            CourseName:this.data.CourseName,
+            FileId:file.FileId,
+            FileName:file.FileName,
+            Type:this.data.FileType,
+          }
+        })
+        wx.cloud.uploadFile({
+          cloudPath: file.FileId,
+          filePath: file.FilePath,
+          success(res) {
+            resolve(res)
+          },
+          fail(err) {
+            resolve(false)
+            console.error("===== 上传文件失败 =====", err)
+          },
+        });
+      }
+      wx.navigateBack({
+        delta:1,
+      })
+      wx.showToast({
+        title: '文件上传成功',
+      })
+    }
   },
   resetForm:function(e){
     this.setData({
@@ -111,39 +154,40 @@ Page({
    */
   upLoadFile(filePath, cloudPathPrefix) {
     // 取随机名
-    let str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let randomStr = '';
-    for (let i = 17; i > 0; --i) {
-      randomStr += str[Math.floor(Math.random() * str.length)];
-    }
-    randomStr += new Date().getTime()
-  
+    console.log(filePath);
     return new Promise((resolve, reject) => {
-      let suffix = /\.\w+$/.exec(filePath)[0] //正则表达式返回文件的扩展名
-      let cloudPath = cloudPathPrefix + '/' + randomStr + suffix
-      const db = wx.cloud.database();
-      db.collection("Resource").add({
-        data:{
-          FileName:randomStr,
-          FileId:cloudPath,
-          Type:this.data.fileType,
-          CourseName:this.data.CourseName,
-          Category:this.data.Category
+    wx.showModal({
+      editable:true,
+      placeholderText:"请输入文件名称",
+      complete: (res) => {
+        if (res.cancel) {
+          console.log('用户点击取消')
         }
-      })
-      wx.cloud.uploadFile({
-        cloudPath: cloudPath,
-        filePath: filePath,
-        success(res) {
-          resolve(res)
-        },
-        fail(err) {
-          resolve(false)
-          console.error("===== 上传文件失败 =====", err)
-        },
-      });
-      
+        if (res.confirm) {
+         let Name = res.content;
+         let str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        let randomStr = '';
+        for (let i = 17; i > 0; --i) {
+          randomStr += str[Math.floor(Math.random() * str.length)];
+        }
+        randomStr += new Date().getTime()
+          let suffix = /\.\w+$/.exec(filePath)[0] //正则表达式返回文件的扩展名
+          let cloudPath = cloudPathPrefix + '/' + randomStr + suffix
+          let item = {
+              FileName:Name,
+              FileId:cloudPath,
+              FilePath:filePath,
+          };
+          let upLoadFiles = this.data.upLoadFiles;
+          upLoadFiles.push(item);
+          this.setData({
+            uploadFiles:upLoadFiles
+          });
+          console.log(this.data.upLoadFiles);
+        }
+      }
     })
+  })
   },
   
     /**
@@ -154,6 +198,8 @@ Page({
         CourseName:options.CourseName,
         FileType:options.FileType
       })
+      console.log(this.data.CourseName);
+      console.log(this.data.FileType);
       switch(this.data.FileType){
         case"Exam":this.setData({title:"历年卷上传"});break;
         case"Resource":this.setData({title:"资料上传"});break;

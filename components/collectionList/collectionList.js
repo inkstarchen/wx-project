@@ -14,12 +14,23 @@ Component({
    * 组件的初始数据
    */
   data: {
+    touch:false
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
+    touchstart: function () {
+      this.setData({
+        touch:true
+      })
+    },
+    touchend:function(){
+      this.setData({
+        touch:false
+      })
+    },
     handlecollection: function(event) {
       let notLogin = wx.getStorageSync('notLogin');
       const data = this.properties.item;
@@ -33,9 +44,10 @@ Component({
           content: '你还未登录',
         })
       }else{
+        
         if(data.name == '读物推荐'){
           wx.navigateTo({
-            url: '/pages/recommend/recommend',
+            url: '/pages/myReading/myReading',
           })
         }else if(data.name == '历年卷'){
           wx.navigateTo({
@@ -52,6 +64,10 @@ Component({
         }else if(data.name == '笔记'){
           wx.navigateTo({
             url: '/pages/mynote/mynote',
+          })
+        }else if(data.name == '使用反馈'){
+          wx.navigateTo({
+            url:'/pages/feedback/feedback',
           })
         }
       }

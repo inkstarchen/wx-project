@@ -1,12 +1,19 @@
-<scroll-view id="my-scroll" scroll-x scroll-into-view="{{currentBlock}}" bindscroll="onScroll" bind:touchend="onmouseup" scroll-with-animation="true"
-bind:touchstart="onmousedown" >
-<view class="window" >
-<view wx:for="{{BookList}}" wx:for-item="item" wx:for-index="index" wx:key="index" id="{{'block'+index}}">
-  <ReadingList item="{{item}}" index="{{index}}"></ReadingList>
-</view>
 
-    
-
+<navigationBack></navigationBack>
+<scroll-view scroll-x  scroll-with-animation="true" scroll-into-view="{{BlockId}}" class="scroll" bind:touchend="end">
+<view class="window">
+<view  wx:for="{{BookList}}" wx:for-item="item" wx:key="index"  >
+<ReadingList item="{{item}}" index="{{index}}" current="{{BlockId}}" viewmore="{{viewmore}}"id="{{'block'+index}}"/>
 </view>
-  <!-- 其他方块 -->
+</view>
 </scroll-view>
+<view class="cover"></view>
+<view bindtap="prevPage" class="prev">
+<image src="../../images/返回.svg" class="image"></image>
+</view>
+<view bindtap="nextPage" class="next">
+  <image src="../../images/返回.svg" class="image"></image>
+</view>
+<view class="button" bindtap="add">
+  <image class='content' src="../../images/添加.svg"></image>
+</view>

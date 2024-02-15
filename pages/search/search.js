@@ -1,3 +1,5 @@
+const db = wx.cloud.database()
+const collection = db.collection("Courses")
 Page({
 
   /**
@@ -12,8 +14,6 @@ Page({
       searchTerm: e.detail.value
     })
     let searchItem = e.detail.value
-    const db = wx.cloud.database()
-    const collection = db.collection("Courses")
     collection.where({
       Name: db.RegExp({
         regexp: searchItem,
@@ -24,7 +24,6 @@ Page({
         console.log(res.data)
         const OpenId = wx.getStorageSync('OpenId');
         const User = db.collection('User');
-        console.log('123');
         this.setData({
           courses: res.data
         });
@@ -53,6 +52,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    collection.where({
+      Name: db.RegExp({
+        regexp: "",
+        options: 'i'  // 表示不区分大小写
+      })
+    }).get({
+      success: res => {
+        this.setData({
+          courses: res.data
+        });
+      },
+      fail: err => {
+        console.error("查询失败", err)
+      }
+    });
   },
 
   /**

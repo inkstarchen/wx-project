@@ -1,9 +1,16 @@
 {
   "appid": "wxfe3e58458f3750f2",
   "compileType": "miniprogram",
+  "libVersion": "3.3.3",
   "cloudfunctionRoot": "cloudfunctions/",
   "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+  "packOptions": {
+    "ignore": [],
+    "include": []
+  },
   "setting": {
+    "ignoreDevUnusedFiles": false,
+    "ignoreUploadUnusedFiles": false,
     "urlCheck": true,
     "es6": true,
     "enhance": true,
@@ -22,6 +29,8 @@
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
+    "useApiHook": true,
+    "useApiHostProcess": true,
     "babelSetting": {
       "ignore": [],
       "disablePlugins": [],
@@ -34,17 +43,12 @@
     "packNpmManually": false,
     "packNpmRelationList": [],
     "minifyWXSS": true,
-    "useIsolateContext": true,
-    "ignoreUploadUnusedFiles": true
+    "useIsolateContext": true
   },
   "condition": {},
   "editorSetting": {
     "tabIndent": "insertSpaces",
     "tabSize": 2
   },
-  "libVersion": "3.3.3",
-  "packOptions": {
-    "ignore": [],
-    "include": []
-  }
+  "srcMiniprogramRoot": "miniprogram/"
 }

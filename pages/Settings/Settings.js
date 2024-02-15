@@ -5,18 +5,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-    notLogin:''
-
+    notLogin:true,
+    touch:false,
   },
-
+  touchstart:function(){
+    this.setData({
+      touch:true,
+    });
+  },
+  touchend:function(){
+    this.setData({
+      touch:false,
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
       const notLogin = wx.getStorageSync('notLogin');
-      this.setData({
-        notLogin:notLogin
-      })
+        this.setData({
+          notLogin:notLogin
+        })
   },
   login:function(){
     wx.setStorageSync('notLogin', false)
@@ -42,25 +51,27 @@ Page({
             wx.cloud.downloadFile({
               fileID:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/test/"+this.data.User.AvatarUrl.slice(11),
             });
+            wx.showToast({
+              title: '账号登录成功',
+            })
             }else{
-              wx.cloud.downloadFile({
-                fileID:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/系统图片/个人头像.png",
-                complete:res =>{
                   this.setData({
                     notLogin:false
                   });
                   db.collection('User').add({
                     data:{
-                      AvatarUrl:res.tempFilePath,
+                      AvatarUrl:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/系统图片/个人头像.png",
                       Courses:[],
                       Name:'用户',
+                      Exams:[],
+                      Notes:[],
+                      Readings:[],
+                      Resource:[],
                     }
                   });
                   wx.navigateTo({
                     url: '/pages/detail/detail',
                   });
-                }
-              });
             }
           }
         });
@@ -70,10 +81,13 @@ Page({
 
   logout:function(){
     wx.setStorageSync('notLogin', true);
-    wx.removeStorageSync('OpenId');
+    wx.setStorageSync('OpenId', '0')
     this.setData({
-      OpenId:"",
+      OpenId:"0",
       notLogin:true,
+    })
+    wx.showToast({
+      title: '账号注销成功',
     })
   },
   /**

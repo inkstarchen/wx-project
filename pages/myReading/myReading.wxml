@@ -1,0 +1,16 @@
+<navigationBack></navigationBack>
+<scroll-view scroll-x  scroll-with-animation="true" scroll-into-view="{{BlockId}}" class="scroll" bind:touchend="end">
+<view class="window">
+<view  wx:for="{{BookList}}" wx:for-item="item" wx:key="index"  >
+<ReadingList item="{{item}}" index="{{index}}" current="{{BlockId}}" viewmore="{{viewmore}}"id="{{'block'+index}}"/>
+</view>
+</view>
+</scroll-view>
+<view class="cover"></view>
+<view bindtap="prevPage" class="prev">
+<image src="../../images/返回.svg" class="image"></image>
+</view>
+<view bindtap="nextPage" class="next">
+  <image src="../../images/返回.svg" class="image"></image>
+</view>
+

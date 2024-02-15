@@ -1,0 +1,20 @@
+.toUpload{
+  box-shadow: rgb(211, 210, 210) 5rpx 5rpx 10rpx;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute;
+  border-radius: 100%;
+  width: 100rpx;
+  top:60rpx;
+  left: 200rpx;
+  height: 100rpx;
+  font-size: 60rpx;
+  font-weight: 900;
+  background-color: rgb(255, 255, 255);
+}
+
+.upload{
+  width: 50rpx;
+}

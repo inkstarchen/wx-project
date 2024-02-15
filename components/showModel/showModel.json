@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "ResourceList":"../../components/ResourceList/ResourceList"
+  }
+}

@@ -1,20 +1,7 @@
-<!--pages/zhiliao/zhiliao.wxml-->
-<page-meta>
-  <navigation-bar title="资料" ></navigation-bar>
-</page-meta>
-<view class="toUpload" bindtap="toUpload">
-  <text>+</text>
+<navigationBack></navigationBack>
+<toUpload FileType="{{FileType}}" CourseName="{{CourseName}}"></toUpload>
+<view class="main">
+<view wx:for="{{category}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+<showModel Category="{{item}}" item="{{ResourceList[index]}}"></showModel>
 </view>
-<view class="chaptertop">课件</view>
-<view class="chapter">第一章</view>
-<view class="chapter">第二章</view>
-<view class="chapter">第三章</view>
-<view class="chapter">第四章</view>
-
-<view class="homeworktop">课后作业答案</view>
-<view class="homework">第一章</view>
-<view class="homework">第二章</view>
-<view class="homework">第三章</view>
-<view class="homework">第四章</view>
-
-<view wx:for="{{resources}}" wx:for-item="item" wx:for-index="index" wx:key="index"><ResourceList item="{{item}}"></ResourceList></view>
+</view>

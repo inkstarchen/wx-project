@@ -1,0 +1,94 @@
+.window{
+  display: flex;
+  margin-top: 60rpx;
+ }
+ page{
+   background-color: #f5f5f5;
+ }
+ 
+ .cover{
+   background-color: rgba(255, 0, 0, 0);
+   height: 100vh;
+   width: 100vw;
+   position: absolute;
+   top: 0;
+ }
+ .ViewMore{
+   position: absolute;
+   top:1000rpx;
+   left: 200rpx;
+   font-size: 60rpx;
+   font-weight: 800;
+   padding: 40rpx;
+   border-radius: 60rpx;
+   color: #ffffff;
+   background-color: #0095ff;
+ }
+ 
+ .prev{
+   box-shadow: rgb(211, 210, 210) 5rpx 5rpx 10rpx;
+   z-index: 5;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position:absolute;
+   border-radius: 100%;
+   width: 100rpx;
+   top:680rpx;
+   left: 20rpx;
+   height: 100rpx;
+   font-size: 60rpx;
+   font-weight: 900;
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ .image{
+   width: 60rpx;
+   height: 60rpx;
+ }
+ 
+ .next{
+   box-shadow: rgb(211, 210, 210) 5rpx -5rpx 10rpx;
+   z-index: 5;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position:absolute;
+   border-radius: 100%;
+   width: 100rpx;
+   top:680rpx;
+   left: 640rpx;
+   height: 100rpx;
+   font-size: 60rpx;
+   font-weight: 900;
+   transform: rotate(180deg);
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ .scroll{
+ z-index: 0;
+ }
+ 
+ 
+ 
+ 
+ .button{
+   box-shadow: rgb(211, 210, 210) 5rpx 5rpx 10rpx;
+   z-index: 5;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   position:absolute;
+   border-radius: 100%;
+   width: 100rpx;
+   top:60rpx;
+   left: 200rpx;
+   height: 100rpx;
+   font-size: 60rpx;
+   font-weight: 900;
+   background-color: rgb(255, 255, 255);
+ }
+ 
+ .content{
+   width: 50rpx;
+ }

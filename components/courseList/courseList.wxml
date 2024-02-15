@@ -1,13 +1,17 @@
 <!--components/courseList/courseList.wxml-->
-<view class="courseBox" >
+<view class="{{touch? 'touch':'courseBox'}}"  bind:touchstart="touchstart" bind:touchend="touchend">
   <view class="courseInfo" bind:tap="to_course">
     <view class="coursePicBox">
-      <img src="{{item.src}}" mode="aspectFill" class="coursePic"/>
+      <image src="{{item.FileId}}" mode="aspectFill" class="coursePic"/>
     </view>
     <view class="course">
       <text class="courseName">{{item.Name}}</text>
-      <text class="courseDetail">{{item.Info}}</text>
+      <text class="courseDetail">建议：{{item.Recommend}}</text>
     </view>
+ 
   </view >
-    <favor item="{{item}}"></favor>
+  <view wx:if="{{OpenId != '0'}}" style="display: flex;z-index:2 ; transform: translateX(-100rpx);">
+    <image src="../../images/星星.svg" class="{{item.favor?'star':'star_no'}}"></image>
+    <image src="../../images/更多.svg" class="{{item.favor?'more':'more_no'}}" bind:tap="more"></image>
+  </view>
 </view>

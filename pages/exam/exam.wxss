@@ -1,7 +1,8 @@
-.toUpload{
-  width: 500rpx;
-  height: 100rpx;
-  margin-left: 100rpx;
-  text-align: center;
+/* pages/tests/tests.wxss */
+page{
   background-color: #f5f5f5;
 }
+.main{
+  padding-top: 200rpx;
+}
+

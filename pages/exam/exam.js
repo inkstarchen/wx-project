@@ -5,22 +5,19 @@ Page({
    */
   data: {
     CourseName:"",
-    tests:[
-    ]
+    tests:[],
+    category:[],
+    testList:[],
   },
-  toUpload:function(e){
-    wx.navigateTo({
-      url: '/pages/upload/upload?FileType=Exam',
-    })
-  },
-
   /**
    * 生命周期函数--监听页面加载
    */
    onLoad(options) {
     this.setData({
-      CourseName:options.CourseName
+      CourseName:options.CourseName,
+      FileType:options.FileType
     })
+    console.log(this.data.FileType);
   },
   
 
@@ -47,12 +44,30 @@ Page({
           this.setData({
             tests:res.data
           })
+          let tests = this.data.tests;
+          let category = [];
+          let testList =[];
+          for(let i = 0; i < tests.length ; i++){
+            if(category.indexOf(tests[i].Category) == -1){
+              category.push(tests[i].Category);
+              testList.push([tests[i]]);
+            }else{
+              testList[category.indexOf(tests[i].Category)].push(tests[i]);
+            }
+          }
+          console.log(testList);
+          this.setData({
+            category:category,
+            testList:testList
+          })
         },
         fail: err => {
           console.log("获取历年卷失败",err);
         }
       })
+
   },
+
 
   /**
    * 生命周期函数--监听页面隐藏

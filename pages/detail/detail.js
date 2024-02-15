@@ -1,11 +1,11 @@
 // index.js
-const defaultAvatarUrl = 'https://mmbiz.qpic.cn/mmbiz/icTdbqWNOwNRna42FI242Lcia07jQodd2FJGIYQfG0LAJGFxM4FbnQP6yfMxBgJ0F3YRqJCJ1aPAK2dQagdusBZg/0'
+
 
 Page({
   data: {
     nickName:"",
     User: {
-      AvatarUrl: defaultAvatarUrl,
+      AvatarUrl: "cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/系统图片/个人头像.png",
       Name: '',
     },
   },
@@ -55,16 +55,22 @@ Page({
             _openid:OpenId
           }).update({
           data: {
-            AvatarUrl:this.data.User.AvatarUrl,
+            AvatarUrl:"cloud://cloud1-1gbl7ldm505fd1a8.636c-cloud1-1gbl7ldm505fd1a8-1323972207/个人头像图片/"+this.data.User.AvatarUrl.slice(11),
             Name : e.detail.value.Name,
           }
         }),
         wx.cloud.uploadFile({
-          cloudPath:'test/'+this.data.User.AvatarUrl.slice(11),
+          cloudPath:'个人头像图片/'+this.data.User.AvatarUrl.slice(11),
           filePath: this.data.User.AvatarUrl,
           success: res => {
             const fileID = res.fileID;
             console.log(fileID);
+            wx.showToast({
+              title: '信息更改成功',
+            });
+            wx.navigateBack({
+              delta:1
+            });
           },
           fail: console.error
         })
@@ -85,11 +91,20 @@ Page({
         console.log(res);
         this.setData({
           User:res.data[0],
-        })
+        });
+        wx.cloud.downloadFile({
+          fileID:res.data[0].AvatarUrl,
+          complete: res => {
+            this.setData({
+              'User.AvatarUrl':res.tempFilePath
+            });
+          }
+        });
       },
       fail: err => {
         console.error("获取数据失败",err);
       }
     })
+
   }
 })

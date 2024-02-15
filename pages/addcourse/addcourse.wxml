@@ -1,30 +1,32 @@
+<navigationBack></navigationBack>
+<view class='main'>
 <form bindsubmit="bindSubmit">
+<view class="form">
   <view class="form_border">
-    <label>课程名称:</label>
-    <input name="Name" auto-focus placeholder="  请填写课程名称" />
+    <label>课程名</label>
+    <input name="Name" auto-focus placeholder="课程名" />
   </view>
   <view class="form_border">
-    <label>课程介绍:</label>
-    <input name="Info"  placeholder="  请填写课程介绍" />
+    <label>课程介绍</label>
+    <input name="Info"  placeholder="介绍" type="" maxlength="100000" />
   </view>
   <view class="form_border">
-    <label>课程建议:</label>
-    <input name="Recommend"  placeholder="  请填写课程建议" />
+    <label>学习建议</label>
+    <input name="Recommend" placeholder="建议" />
   </view>
-
-<form bindsubmit="formsubmit">
-<view>
-  <label>课程图片:</label>
+  <view class="image_border">
+  <label>封面</label>
          <input style="display:none" name = "orderImage" value='{{showImage_url}}'></input>
-          <button bindtap="upload">+</button>
-            
-            <image src='{{images}}'></image>        
-          </view>
-        </form>  
+         <view class="image_box">
+            <image src='{{images}}' class='image'></image>
+        </view> 
+              <view class="add_image" bindtap="upload">
+                  <image class='content' src="../../images/添加.svg"></image>
+              </view>
+  </view>
+</view>
+            <button hover-class="hover-button" class="button" form-type="submit">提交</button>
+    <button hover-class="hover-button" class="button" form-type="reset" bind:tap="reset" style="margin-top: 10rpx;">重置</button>     
 
-
-<text>\n</text>
- <button hover-class="hover-button" class="button" form-type="submit">提交</button>
-  <button hover-class="hover-button" class="button" form-type="reset" style="margin-top: 10rpx;">重置</button>
- 
-</form>
+</form>  
+</view>

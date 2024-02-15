@@ -1,8 +1,9 @@
 <!--pages/tests/tests.wxml-->
-<page-meta>
-  <navigation-bar title="历年卷"></navigation-bar>
-</page-meta>
-<view wx:for="{{tests}}" wx:for-item="item" wx:for-index="index" wx:key="index"><ResourceList item="{{item}}"/></view>
-<view class="toUpload" bindtap="toUpload">
-  <text>+</text>
+<navigationBack></navigationBack>
+<toUpload FileType="{{FileType}}" CourseName="{{CourseName}}"></toUpload>
+<view class="main">
+<view wx:for="{{category}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+<showModel Category="{{item}}" item="{{testList[index]}}"></showModel>
 </view>
+</view>
+
