@@ -1,6 +1,7 @@
 
-  const db = wx.cloud.database()
-  const collection = db.collection("Courses")Page({
+  const db = wx.cloud.database();
+  const collection = db.collection("Courses");
+  Page({
   /**
    * 页面的初始数据
    */
